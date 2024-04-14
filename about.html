@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Pet Food</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/fontawesome.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="font-size: 14px;">
+    <div class="container-fluid">
+
+      <!-- the hamburger -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-on-mobile">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- the brand -->
+      <a class="navbar-brand mx-auto" href="home.html">
+        <img src="images/logo.svg" alt="" style="width: 75px;">
+      </a>
+
+      <!-- the cart on small screen => mobile -->
+      <li class="ms-auto d-inline-block d-lg-none cart-show">
+        <a class="nav-link-mobile p-0" data-bs-toggle="offcanvas" data-bs-target="#shoppingCartOffcanvas">
+          <span><i class="fa-solid fa-cart-shopping text-primary"></i></span>
+        </a>
+      </li>
+
+      <!-- the nav bar on large screen => desktop -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav navbar-nav-1 ms-lg-6 mb-lg-0 fw-bold">
+          <li class="nav-item">
+            <a class="nav-link nav-link-hover" href="home.html">
+              <span class="nav-link-hover">HOME</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-hover" href="shop.html">
+              <span class="nav-link-hover">SHOP</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-hover active" href="about.html">
+              <span class="nav-link-hover">ABOUT</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-hover" href="blog.html">
+              <span class="nav-link-hover">BLOG</span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-link-hover dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              <span class="nav-link-hover">PAGES</span>
+              <i class="fa-solid fa-plus md-text position-absolute"></i>
+            </a>
+            <ul class="dropdown-menu shadow-lg rounded-4">
+              <li>
+                <a class="dropdown-item" href="faq.html">
+                  <span class="nav-link-hover">FAQ</span>
+                </a>
+              </li>
+              <li>
+                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+              </li>
+              <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+              <li>
+                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+              </li>
+              <li><a class="dropdown-item" href="team-members.html">Members</a></li>
+              <li>
+                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+              </li>
+              <li><a class="dropdown-item" href="sitemap.html">Sitemap</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-hover" href="contact.html">
+              <span class="nav-link-hover">CONTACT</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-2 ms-auto mb-2 mb-lg-0 fw-bold d-flex">
+          <li class="nav-item">
+            <a class="nav-link p-0" href="#">
+              <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
+              Store Locator
+            </a>
+          </li>
+          <li class="nav-item dropdown dropstart">
+            <a class="nav-link p-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="#">
+              <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
+              Sign In
+            </a>
+            <div class="dropdown-menu p-0">
+              <div class="sign-in border border-primary px-4 pt-5 pb-3 bg-light text-black" style="min-width: 350px;">
+                <div class="d-flex justify-content-between">
+                  <h3>Sign in</h3>
+                  <a href="#" class="text-primary">Create an Account</a>
+                </div>
+                <form class="mb-3">
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Username or email <span
+                        class="text-danger">*</span></label>
+                    <input class="form-control text-black" type="text" id="username" placeholder="Username">
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+                    <input class="form-control text-black" type="text" id="password" placeholder="Password">
+                  </div>
+                  <div class="d-grid">
+                    <button class="btn btn-primary fw-bold text-uppercase">
+                      Login
+                      <span class="fa-stack sm-text ms-1" style="margin-bottom: 1px;">
+                        <i class="fas fa-circle fa-stack-2x text-black"></i>
+                        <i class="fas fa-play fa-stack-1x text-primary"></i>
+                      </span>
+                    </button>
+                  </div>
+                </form>
+                <div class="text-end">
+                  <p class="text-primary">Lost your password?</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item cart-show">
+            <a class="nav-link p-0" href="#" data-bs-toggle="offcanvas" data-bs-target="#shoppingCartOffcanvas">
+              <span class="me-2"><i class="fa-solid fa-cart-shopping text-primary"></i></span>
+              Cart
+              <span class="fa-stack ms-1" style="font-size: 10px;">
+                <i class="fas fa-circle text-primary fa-stack-2x"></i>
+                <p class="fa-stack-1x text-black cart-count">0</p>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- the shopping cart offcanvas -->
+  <div class="offcanvas offcanvas-end text-black" tabindex="-1" id="shoppingCartOffcanvas"
+    aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header border-bottom py-4">
+      <h5 class="offcanvas-title" id="offcanvasLabel">Shopping cart</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p class="text-black-50 text-center xxl-text cart-show-body">No products in the cart</p>
+    </div>
+  </div>
+
+  <!-- the nav bar canvas on small screen => mobile  -->
+  <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="navbar-on-mobile" style="z-index: 1055">
+    <div class="offcanvas-header px-4 pt-4">
+      <h5 class="offcanvas-title fw-bold" id="offcanvasLabel">main menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <img class="mx-4" src="images/line-break.png" alt="" style="width: 60px;">
+    <div class="offcanvas-body">
+      <ul class="navbar-nav-mobile fw-bold list-group list-group-flush">
+        <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+          <a class="navbar-link-mobile text-decoration-none" href="#">HOME</a>
+        </li>
+        <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+          <a class="navbar-link-mobile text-decoration-none" href="#">SHOP</a>
+        </li>
+        <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+          <a class="navbar-link-mobile text-decoration-none active" href="#">ABOUT</a>
+        </li>
+        <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+          <a class="navbar-link-mobile text-decoration-none" href="#">BLOG</a>
+        </li>
+        <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+          <a class="navbar-link-mobile text-decoration-none" href="#">PAGES</a>
+        </li>
+        <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+          <a class="navbar-link-mobile text-decoration-none" href="#">CONTACT</a>
+        </li>
+        <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+          <a class="navbar-link-mobile text-decoration-none p-0" href="#">
+            <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
+            Store Locator
+          </a>
+        </li>
+        <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3 dropdown dropstart">
+          <a class="navbar-link-mobile text-decoration-none p-0" data-bs-toggle="modal" data-bs-target="#signInModal"
+            href="#">
+            <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
+            Sign In
+          </a>
+          <!-- Modal -->
+          <div class="modal fade" id="signInModal" data-bs-backdrop="static" data-bs-keyboard="false"
+            style="z-index: 1800;">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header border-bottom-0    ">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                  <div class="sign-in px-4 pt-3 pb-3 bg-light text-black w-100">
+                    <div class="d-flex justify-content-between">
+                      <h3>Sign in</h3>
+                      <a href="#" class="text-primary">Create an Account</a>
+                    </div>
+                    <form class="mb-3">
+                      <div class="mb-3">
+                        <label for="username" class="form-label">Username or email <span
+                            class="text-danger">*</span></label>
+                        <input class="form-control text-black" type="text" id="username" placeholder="Username">
+                      </div>
+                      <div class="mb-3">
+                        <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+                        <input class="form-control text-black" type="text" id="password" placeholder="Password">
+                      </div>
+                      <div class="d-grid">
+                        <button class="btn btn-primary fw-bold text-uppercase">
+                          Login
+                          <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 1px;">
+                            <i class="fas fa-circle fa-stack-2x text-black"></i>
+                            <i class="fas fa-play fa-stack-1x text-primary"></i>
+                          </span>
+                        </button>
+                      </div>
+                    </form>
+                    <div class="text-end">
+                      <p class="text-primary">Lost your password?</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="breadcrumb-wrapper bg-black text-white pt-8 pb-8">
+    <div class="container">
+      <div class="row">
+        <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+          <!-- Change into the name of the page -->
+          <h2 class="fw-bold display-2">Contact Us</h2>
+          <div class="d-flex gap-2 lg-text">
+            <a href="home.html" class="m-0 text-decoration-none link-light">Home Page</a>
+            <span class="text-primary">
+              <i class="fas fa-circle" style="transform: scale(0.5);"></i>
+            </span>
+            <!-- Change into the name of the page -->
+            <p class="m-0 text-white-50">Change me</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Your code goes here -->
+  <main id="about">
+    <div class="container">
+      <section class="section-one">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="box">
+              <img src="images/h4_deco2.png" class="img-1" alt="">
+              <img src="images/h4_img6.png" class="img-2" alt="">
+              <img src="images/h4_img5.png" class="img-3" alt="">
+            </div>
+          </div>
+          <!-- <div class="ol-xl-2"></div> -->
+          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+            <div class="title">
+              Helping dogs and cats live long and healthy
+              <img src="images/h4_deco3.png" alt="">
+            </div>
+            <img class="space" src="images/h3_divider.png" alt="">
+            <div class="decs">
+              A small change can have a big impact. Try out our Bowl Builder to explore the many ways that
+              adding fresh food to your pet’s diet can make them happier and healthier—whether they eat
+              canned, kibble, raw, or a mix of all.
+            </div>
+            <div class="d-flex p-0">
+              <div class="button hstack gap-3">
+                <button class="btn btn-primary text-uppercase fw-bold py-3">
+                  STORE LOCATOR
+                  <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 2px;">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-play fa-stack-1x text-primary"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section class="section-two">
+      <div class="container">
+        <div class="col-xl-4 col-lg-6 col-md-12 col-sm-12">
+          <div class="box">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="icon">
+                    <img class="img-one" src="images/one.png" alt="">
+                  </div>
+                  <div class="title">
+                    Our Promise
+                  </div>
+                  <div class="desc">
+                    To be the most trusted and convenient online destination for pet parents (and partners), everywhere.
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="icon">
+                    <img class="img-two" src="images/two.png" alt="">
+                  </div>
+                  <div class="title">
+                    Our Promise
+                  </div>
+                  <div class="desc">
+                    The process of cooking at lower temperatures & at slower rates leads to an increase in nutrient
+                    retention.
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <section class="section-three">
+        <div class="title">
+          <h2>
+            Here's how it works
+          </h2>
+          <img src="images/h2_decor-1.png" alt="">
+        </div>
+        <div class="space">
+          <img src="images/h3_divider.png" alt="">
+        </div>
+        <div class="img-two">
+          <img src="images/h4_deco3.png" alt="">
+        </div>
+
+        <div class="desc">
+          You can order multiple recipes. Perfect for taste-testing and offering your dog a variety of flavors! Bring it
+          on, picky pups.
+        </div>
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 d-flex flex-column align-items-center">
+            <div class="icon">
+              <img src="images/h2_img-1.svg" alt="">
+            </div>
+            <div class="title-animal">
+              Tell us about your pet
+            </div>
+            <div class="desc-animal">
+              From age to breed and everywhere in between, we want to know more about your best buddy! like clockwork.
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 d-flex flex-column align-items-center">
+            <div class="icon">
+              <img src="images/h2_img-3.svg" alt="">
+            </div>
+            <div class="title-animal">
+              View your pup's recommendations
+            </div>
+            <div class="desc-animal">
+              Personalized supplements that target your dog's specific needs, all based on their unique profile, like
+              clockwork.
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 d-flex flex-column align-items-center">
+            <div class="icon">
+              <img src="images/h2_img-2.svg" alt="">
+            </div>
+            <div class="title-animal-3">
+              Get personalized supplements delivered
+            </div>
+            <div class="desc-animal">
+              All the things they need and none of the things they don't. Conveniently delivered for daily use, like
+              clockwork.
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+    <section class="section-four">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 ">
+            <h2>
+              Meet two of Gopet experts
+            </h2>
+            <img class="dog" src="images/contact_decor_2.png" alt="">
+            <div class="space">
+              <img src="images/h3_divider.png" alt="">
+            </div>
+            <div class="decs">
+              Learn more about some of the expertise behind Gopet by clicking on their image.
+            </div>
+            <div class="d-flex p-0">
+              <div class="button hstack gap-3">
+                <button class="btn btn-primary text-uppercase fw-bold py-3">
+                  EXPLORE NOW
+                  <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 2px;">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-play fa-stack-1x text-primary"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="icon">
+              <img src="images/h3_deco4.png" alt="">
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+            <div class="box">
+              <div class="img-1">
+                <img src="images/h3_img12.png" alt="">
+                <ul class="list">
+                  <li><i class="fa-brands fa-instagram"></i></li>
+                  <li><i class="fa-brands fa-pinterest"></i></li>
+                </ul>
+              </div>
+              <div class="name">
+                Emma Passman
+              </div>
+              <div class="desc">
+                Head of nutrition
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+            <div class="box">
+              <div class="img-1">
+                <img src="images/h3_img13.png" alt="">
+                <ul class="list">
+                  <li><i class="fa-brands fa-instagram"></i></li>
+                  <li><i class="fa-brands fa-pinterest"></i></li>
+                </ul>
+              </div>
+              <div class="name">
+                Advitor
+              </div>
+              <div class="desc">
+                Anthony Chadwick
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section class="section-five">
+      <div class="container">
+        <div class="box">
+
+          <h2 class="title">
+            Our clients love us!
+          </h2>
+          <div class="space">
+            <img src="images/h3_divider.png" alt="">
+          </div>
+          <div class="desc">
+            Testimonials & Reviews – What our customers are saying…..
+          </div>
+
+          <div class="box-croll">
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="icon">
+                    <img class="img-one" src="images/hinh1.png" alt="">
+                  </div>
+                  <div class="desc">
+                    Thank you so much! My cat has severe food allergies and pretty much can only eat rabbit, apples, and
+                    chicken. This is the only way I can feed her without her throwing up all the time and chewing her
+                    fur out.
+                  </div>
+                  <div class="name">
+                    Jack Morrison
+                  </div>
+                  <p>Dog Owner - Ontario</p>
+                </div>
+                <div class="carousel-item">
+                  <div class="icon">
+                    <img class="img-two" src="images/hinh2.png" alt="">
+                  </div>
+                  <div class="desc">
+                    Thanks for the great product, our dog Chica loves it and I feel good feeding it to her. I rotate a
+                    variety of proteins and everybody's happy , I feel good feeding it to her. Thanks so much!
+                  </div>
+                  <div class="name">
+                    Jennifer Doe
+                  </div>
+                  <p>
+                    Dog Owner - Florida
+                  </p>
+                </div>
+                <div class="carousel-item">
+                  <div class="icon">
+                    <img class="img-two" src="images/hinh3.png" alt="">
+                  </div>
+                  <div class="desc">
+                    Best thing I ever did for my 2 cats. Hairballs...gone! Diarrhea and or loose stools...gone! One cats
+                    horrid breath...gone! One cat from a bit 'toround' to almost perfect weight.
+                  </div>
+                  <div class="name">
+                    Dana Eston
+                  </div>
+                  <p>
+                    Cat Owner - Colorado
+                  </p>
+                </div>
+                <div class="carousel-item">
+                  <div class="icon">
+                    <img class="img-one" src="images/hinh1.png" alt="">
+                  </div>
+                  <div class="desc">
+                    Thank you so much! My cat has severe food allergies and pretty much can only eat rabbit, apples, and
+                    chicken. This is the only way I can feed her without her throwing up all the time and chewing her
+                    fur out.
+                  </div>
+                  <div class="name">
+                    Jack Morrison
+                  </div>
+                  <p>Dog Owner - Ontario</p>
+                </div>
+                <div class="carousel-item">
+                  <div class="icon">
+                    <img class="img-two" src="images/hinh2.png" alt="">
+                  </div>
+                  <div class="desc">
+                    Thanks for the great product, our dog Chica loves it and I feel good feeding it to her. I rotate a
+                    variety of proteins and everybody's happy , I feel good feeding it to her. Thanks so much!
+                  </div>
+                  <div class="name">
+                    Jennifer Doe
+                  </div>
+                  <p>
+                    Dog Owner - Florida
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              </div>
+
+            </div>
+            <div class="one">
+              <img src="images/phay2.png" alt="">
+            </div>
+            <div class="two">
+              <img src="images/phay1.png" alt="">
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Your code goes here -->
+  <!-- Your code goes here -->
+  <footer class="footer pt-7 pb-6 lg-text text-center text-md-start text-white">
+    <div class="container">
+      <div
+        class="d-flex flex-wrap flex-column flex-md-row gap-5 gap-md-0 justify-content-between align-items-center mb-5">
+        <img src="images/logo.svg" alt="" style="width: 100px;">
+        <div class="location d-flex gap-2">
+          <span><i class="fa-regular fa-location-dot text-primary"></i></span>
+          <p class="fw-bold m-0">48 West Temple Drive <br> Ashburn, VA 20147 </p>
+        </div>
+        <div class="open-time d-flex gap-2">
+          <span><i class="fa-regular fa-clock text-primary"></i></span>
+          <div>
+            <p class="fw-bold m-0">Mon to Sun:</p>
+            <p class="m-0">10:00 AM To 6:00 PM</p>
+          </div>
+        </div>
+        <div class="location d-flex gap-2">
+          <span><i class="fa-regular fa-envelope text-primary"></i></span>
+          <div>
+            <p class="fw-bold m-0">Email Us:</p>
+            <p class="m-0">support@example.com</p>
+          </div>
+        </div>
+        <p class="phone-number fw-bold text-primary fs-2 m-0">(844)-1800333556</p>
+      </div>
+      <img class="mb-5" src="images/footer_divide.png" alt="" style="max-width: 100%;">
+      <div class="row mb-7">
+        <div class="col-md-3">
+          <div class="mb-3">
+            <h4 class="fw-bold">Join our community & save $3.00 on wellness!</h4>
+          </div>
+          <div class="mb-3">
+            <p class="text-white-50">We'll help you find the food that is right for your pet even if it
+              isn't our own.</p>
+          </div>
+          <div>
+            <a href="#" class="btn btn-light py-3 fw-bold text-uppercase">
+              Sign up
+              <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 2px;">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fas fa-play fa-stack-1x text-white"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-9 mt-5 mt-md-0">
+          <div class="row gap-5 gap-md-0">
+            <div class="offset-md-2 col-md-2">
+              <div class="mb-4">
+                <p class="fw-bold text-uppercase xl-text">Our Products</p>
+              </div>
+              <ul class="list-unstyled vstack gap-2">
+                <li><a href="#" class="text-white-50 text-decoration-none">For Cats</a></li>
+                <li><a href="#" class="text-white-50 text-decoration-none">For Dogs</a></li>
+                <li><a href="#" class="text-white-50 text-decoration-none">Challenger</a></li>
+                <li><a href="#" class="text-white-50 text-decoration-none">FreeStyle for Cats</a></li>
+                <li><a href="#" class="text-white-50 text-decoration-none">FreeStyle for Dogs</a></li>
+              </ul>
+            </div>
+            <div class="offset-md-2 col-md-2">
+              <div class="mb-3">
+                <p class="fw-bold text-uppercase xl-text">Community</p>
+              </div>
+              <ul class="list-unstyled vstack gap-2">
+                <li><a href="#" class="text-white-50 text-decoration-none">News & Stories</a></li>
+                <li><a href="#" class="text-white-50 text-decoration-none">Mix-It Recipes</a></li>
+                <li><a href="#" class="text-white-50 text-decoration-none">Our Story</a></li>
+                <li><a href="#" class="text-white-50 text-decoration-none">Retailer Asset Portal</a>
+                </li>
+              </ul>
+            </div>
+            <div class="offset-md-2 col-md-2">
+              <div class="mb-3">
+                <p class="fw-bold text-uppercase xl-text">Get in touch</p>
+              </div>
+              <ul class="list-unstyled vstack gap-2">
+                <li><a href="#" class="text-white-50 text-decoration-none">Careers</a></li>
+                <li><a href="#" class="text-white-50 text-decoration-none">Contact us</a></li>
+                <li><a href="#" class="text-white-50 text-decoration-none">FAQ</a></li>
+                <li><a href="#" class="text-white-50 text-decoration-none">Find a Retailer</a></li>
+                <li><a href="#" class="text-white-50 text-decoration-none">Policies</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex flex-column flex-md-row">
+          <p class="text-white-50">Copyright &copy; 2021 <span class="text-white">Gopet</span>. All rights
+            reserved</p>
+          <div class="ms-md-auto">
+            <a href="#" class="text-decoration-none">
+              <span class="fa-stack">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fab fa-facebook-f fa-stack-1x text-white"></i>
+              </span>
+            </a>
+            <a href="#" class="text-decoration-none">
+              <span class="fa-stack">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fab fa-twitter fa-stack-1x text-white"></i>
+              </span>
+            </a>
+            <a href="#" class="text-decoration-none">
+              <span class="fa-stack">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fab fa-instagram fa-stack-1x text-white"></i>
+              </span>
+            </a>
+            <a href="#" class="text-decoration-none">
+              <span class="fa-stack">
+                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                <i class="fab fa-pinterest fa-stack-1x text-white"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/navbar-effect.js"></script>
+  <script src="js/data-products.js"></script>
+  <script src="js/shopping-cart.js"></script>
+</body>
+
+</html>

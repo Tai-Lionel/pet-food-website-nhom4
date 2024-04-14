@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Pet Food</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="./css/fontawesome.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="font-size: 14px;">
+        <div class="container-fluid">
+            <!-- the hamburger -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-on-mobile">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- the brand -->
+            <a class="mx-auto navbar-brand" href="home.html">
+                <img src="./images/logo.svg" alt="" style="width: 75px" />
+            </a>
+
+            <!-- the cart on small screen => mobile -->
+            <li class="ms-auto d-inline-block d-lg-none cart-show">
+                <a class="p-0 nav-link-mobile" data-bs-toggle="offcanvas" data-bs-target="#shoppingCartOffcanvas">
+                    <span><i class="fa-solid fa-cart-shopping text-primary"></i></span>
+                </a>
+            </li>
+
+            <!-- the nav bar on large screen => desktop -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navbar-nav-1 ms-lg-6 mb-lg-0 fw-bold">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="home.html">
+                            <span class="nav-link-hover">HOME</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover active" href="shop.html">
+                            <span class="nav-link-hover">SHOP</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="about.html">
+                            <span class="nav-link-hover">ABOUT</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="blog.html">
+                            <span class="nav-link-hover">BLOG</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-hover dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <span class="nav-link-hover">PAGES</span>
+                            <i class="fa-solid fa-plus md-text position-absolute"></i>
+                        </a>
+                        <ul class="dropdown-menu shadow-lg rounded-4">
+                            <li>
+                                <a class="dropdown-item" href="faq.html">
+                                    <span class="nav-link-hover">FAQ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+                            </li>
+                            <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                            <li>
+                                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+                            </li>
+                            <li><a class="dropdown-item" href="team-members.html">Members</a></li>
+                            <li>
+                                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+                            </li>
+                            <li><a class="dropdown-item" href="sitemap.html">Sitemap</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="contact.html">
+                            <span class="nav-link-hover">CONTACT</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="mb-2 navbar-nav navbar-nav-2 ms-auto mb-lg-0 fw-bold d-flex">
+                    <li class="nav-item">
+                        <a class="p-0 nav-link" href="#">
+                            <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
+                            Store Locator
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown dropstart">
+                        <a class="p-0 nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            href="#">
+                            <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
+                            Sign In
+                        </a>
+                        <div class="p-0 dropdown-menu">
+                            <div class="px-4 pt-5 pb-3 text-black border sign-in border-primary bg-light"
+                                style="min-width: 350px">
+                                <div class="d-flex justify-content-between">
+                                    <h3>Sign in</h3>
+                                    <a href="#" class="text-primary">Create an Account</a>
+                                </div>
+                                <form class="mb-3">
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">Username or email
+                                            <span class="text-danger">*</span></label>
+                                        <input class="text-black form-control" type="text" id="username"
+                                            placeholder="Username" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password
+                                            <span class="text-danger">*</span></label>
+                                        <input class="text-black form-control" type="text" id="password"
+                                            placeholder="Password" />
+                                    </div>
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary fw-bold text-uppercase">
+                                            Login
+                                            <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 1px">
+                                                <i class="text-black fas fa-circle fa-stack-2x"></i>
+                                                <i class="fas fa-play fa-stack-1x text-primary"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </form>
+                                <div class="text-end">
+                                    <p class="text-primary">
+                                        Lost your password?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item cart-show">
+                        <a class="p-0 nav-link" href="#" data-bs-toggle="offcanvas"
+                            data-bs-target="#shoppingCartOffcanvas">
+                            <span class="me-2"><i class="fa-solid fa-cart-shopping text-primary"></i></span>
+                            Cart
+                            <span class="fa-stack ms-1" style="font-size: 10px">
+                                <i class="fas fa-circle text-primary fa-stack-2x"></i>
+                                <p class="text-black fa-stack-1x cart-count">
+                                    0
+                                </p>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- the shopping cart offcanvas -->
+    <div class="text-black offcanvas offcanvas-end" tabindex="-1" id="shoppingCartOffcanvas"
+        aria-labelledby="offcanvasLabel">
+        <div class="py-4 offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="offcanvasLabel">
+                Shopping cart
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="text-center offcanvas-body text-black-50 xxl-text cart-show-body">
+            No products in the cart
+        </div>
+    </div>
+
+    <!-- the nav bar canvas on small screen => mobile  -->
+    <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="navbar-on-mobile" style="z-index: 1055">
+        <div class="px-4 pt-4 offcanvas-header">
+            <h5 class="offcanvas-title fw-bold" id="offcanvasLabel">
+                main menu
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <img class="mx-4" src="./images/line-break.png" alt="" style="width: 60px" />
+        <div class="offcanvas-body">
+            <ul class="navbar-nav-mobile fw-bold list-group list-group-flush">
+                <li class="p-0 py-2 mx-3 navbar-item-mobile list-group-item">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">HOME</a>
+                </li>
+                <li class="p-0 py-2 mx-3 navbar-item-mobile list-group-item">
+                    <a class="navbar-link-mobile text-decoration-none active" href="#">SHOP</a>
+                </li>
+                <li class="p-0 py-2 mx-3 navbar-item-mobile list-group-item">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">ABOUT</a>
+                </li>
+                <li class="p-0 py-2 mx-3 navbar-item-mobile list-group-item">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">BLOG</a>
+                </li>
+                <li class="p-0 py-2 mx-3 navbar-item-mobile list-group-item">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">PAGES</a>
+                </li>
+                <li class="p-0 py-2 mx-3 navbar-item-mobile list-group-item">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">CONTACT</a>
+                </li>
+                <li class="p-0 py-2 mx-3 navbar-item-mobile list-group-item">
+                    <a class="p-0 navbar-link-mobile text-decoration-none" href="#">
+                        <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
+                        Store Locator
+                    </a>
+                </li>
+                <li class="p-0 py-2 mx-3 navbar-item-mobile list-group-item dropdown dropstart">
+                    <a class="p-0 navbar-link-mobile text-decoration-none" data-bs-toggle="modal"
+                        data-bs-target="#signInModal" href="#">
+                        <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
+                        Sign In
+                    </a>
+                    <!-- Modal -->
+                    <div class="modal fade" id="signInModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                        style="z-index: 1800">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header border-bottom-0">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="p-0 modal-body">
+                                    <div class="px-4 pt-3 pb-3 text-black sign-in bg-light w-100">
+                                        <div class="d-flex justify-content-between">
+                                            <h3>Sign in</h3>
+                                            <a href="#" class="text-primary">Create an Account</a>
+                                        </div>
+                                        <form class="mb-3">
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Username or email
+                                                    <span class="text-danger">*</span></label>
+                                                <input class="text-black form-control" type="text" id="username"
+                                                    placeholder="Username" />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password" class="form-label">Password
+                                                    <span class="text-danger">*</span></label>
+                                                <input class="text-black form-control" type="text" id="password"
+                                                    placeholder="Password" />
+                                            </div>
+                                            <div class="d-grid">
+                                                <button class="btn btn-primary fw-bold text-uppercase">
+                                                    Login
+                                                    <span class="fa-stack super-sm-text ms-1" style="
+                                                                margin-bottom: 1px;
+                                                            ">
+                                                        <i class="text-black fas fa-circle fa-stack-2x"></i>
+                                                        <i class="fas fa-play fa-stack-1x text-primary"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <div class="text-end">
+                                            <p class="text-primary">
+                                                Lost your password?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="pt-8 pb-8 text-white bg-black breadcrumb-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="gap-2 d-flex flex-column justify-content-center align-items-center">
+                    <!-- Change into the name of the page -->
+                    <h2 class="fw-bold display-2">Shop</h2>
+                    <div class="gap-2 d-flex lg-text">
+                        <a href="home.html" class="m-0 text-decoration-none link-light">Home Page</a>
+                        <span class="text-primary">
+                            <i class="fas fa-circle" style="transform: scale(0.5)"></i>
+                        </span>
+                        <!-- Change into the name of the page -->
+                        <p class="m-0 text-white-50">shop</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main__shop d-flex">
+        <div class="shop__sidebar col-3">
+            <div class="shop__sidebar__categories">
+                <h4 class="pb-2 categories__header shop__sidebar__title">
+                    Categories
+                </h4>
+                <div class="gap-4 mt-3 categories__inner d-flex flex-column">
+                    <div class="gap-2 category__group d-flex align-items-center">
+                        <div
+                            class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="category__text shop__sidebar__text">
+                            Dry Food
+                        </p>
+                    </div>
+                    <div class="gap-2 category__group d-flex align-items-center">
+                        <div
+                            class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="category__text shop__sidebar__text">
+                            Fresh & Prepared Meal
+                        </p>
+                    </div>
+                    <div class="gap-2 category__group d-flex align-items-center">
+                        <div
+                            class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="category__text shop__sidebar__text">
+                            Healthacare
+                        </p>
+                    </div>
+                    <div class="gap-2 category__group d-flex align-items-center">
+                        <div
+                            class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="category__text shop__sidebar__text">
+                            Premium Food
+                        </p>
+                    </div>
+                    <div class="gap-2 category__group d-flex align-items-center">
+                        <div
+                            class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="category__text shop__sidebar__text">
+                            Uncategorized
+                        </p>
+                    </div>
+                    <div class="gap-2 category__group d-flex align-items-center">
+                        <div
+                            class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="category__text shop__sidebar__text">
+                            Veterinary Diets
+                        </p>
+                    </div>
+                    <div class="gap-2 category__group d-flex align-items-center">
+                        <div
+                            class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="category__text shop__sidebar__text">
+                            Vitamins & Supplements
+                        </p>
+                    </div>
+                    <div class="gap-2 category__group d-flex align-items-center category__dropdown"
+                        id="category__dropdown">
+                        <div
+                            class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="category__text shop__sidebar__text">
+                            Wet Food
+                        </p>
+                        <i class="fa-solid fa-plus ms-auto category__dropdown-icon"></i>
+                    </div>
+                    <div class="category__dropdown__panel" id="category__dropdown__panel" style="display: none">
+                        <div class="gap-2 mt-2 category__group d-flex align-items-center ps-3">
+                            <div
+                                class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                            </div>
+                            <p class="category__text shop__sidebar__text">
+                                Chicken Free
+                            </p>
+                        </div>
+                        <div class="gap-2 mt-2 category__group d-flex align-items-center ps-3">
+                            <div
+                                class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                            </div>
+                            <p class="category__text shop__sidebar__text">
+                                Puppy
+                            </p>
+                        </div>
+                        <div class="gap-2 mt-2 category__group d-flex align-items-center ps-3">
+                            <div
+                                class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                            </div>
+                            <p class="category__text shop__sidebar__text">
+                                Senior
+                            </p>
+                        </div>
+                        <div class="gap-2 mt-2 category__group d-flex align-items-center ps-3">
+                            <div
+                                class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                            </div>
+                            <p class="category__text shop__sidebar__text">
+                                Weight Control
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 shop__sidebar__filter">
+                <h4 class="pb-2 shop__sidebar__title filter__header">
+                    Filter
+                </h4>
+                <div class="filter__inner">
+                    <div class="filter-range">
+                        <div class="mt-5 range-main">
+                            <!-- <input
+                                    type="range"
+                                    class="range__value-start range-slider-thumb"
+                                />
+                                <div class="range-black"></div>
+                                <input
+                                    type="range"
+                                    class="range__value-end range-slider-thumb"
+                                    value="970"
+                                /> -->
+                            <div class="range__value-start range__value"></div>
+                            <div class="range__black"></div>
+                            <div class="range__value-end range__value"></div>
+                        </div>
+                        <div class="mt-2 range-footer d-flex align-items-center justify-content-between">
+                            <div class="range__price" style="user-select: none">
+                                <span>Price:$<span class="price-start">0</span>
+                                    - $<span class="price-end">2000</span></span>
+                            </div>
+                            <button class="filter__btn">FILTER</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 shop__sidebar__product__brands">
+                <h4 class="pb-2 product__brands__header shop__sidebar__title">
+                    Product Brands
+                </h4>
+                <div class="gap-4 mt-3 product__brands__inner d-flex flex-column">
+                    <div class="gap-2 product__brand__group d-flex align-items-center">
+                        <div
+                            class="border product__brand__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="product__brand__text shop__sidebar__text">
+                            Ainsworth
+                        </p>
+                    </div>
+                    <div class="gap-2 product__brand__group d-flex align-items-center">
+                        <div
+                            class="border product__brand__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="product__brand__text shop__sidebar__text">
+                            Blue Buffalo
+                        </p>
+                    </div>
+                    <div class="gap-2 product__brand__group d-flex align-items-center">
+                        <div
+                            class="border product__brand__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="product__brand__text shop__sidebar__text">
+                            Freshpet
+                        </p>
+                    </div>
+                    <div class="gap-2 product__brand__group d-flex align-items-center">
+                        <div
+                            class="border product__brand__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="product__brand__text shop__sidebar__text">
+                            Hill's Pet Nutrition
+                        </p>
+                    </div>
+                    <div class="gap-2 product__brand__group d-flex align-items-center">
+                        <div
+                            class="border product__brand__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="product__brand__text shop__sidebar__text">
+                            Mars Petcare / Royal Canin
+                        </p>
+                    </div>
+                    <div class="gap-2 product__brand__group d-flex align-items-center">
+                        <div
+                            class="border product__brand__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="product__brand__text shop__sidebar__text">
+                            Nestlé Purina PetCare
+                        </p>
+                    </div>
+                    <div class="gap-2 product__brand__group d-flex align-items-center">
+                        <div
+                            class="border product__brand__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                        </div>
+                        <p class="product__brand__text shop__sidebar__text">
+                            WellPet
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 shop__sidebar__products">
+                <h4 class="pb-2 products__header shop__sidebar__title">
+                    Product
+                </h4>
+                <div class="gap-4 mt-3 products__inner d-flex flex-column">
+                    <div class="gap-3 product__group d-flex align-items-center">
+                        <div class="product__img-wrapper">
+                            <img src="./images/shop-img-1.jpg" alt="product"
+                                class="product__img w-100 h-100 object-fix-cover" />
+                        </div>
+                        <div class="gap-2 product__img-info d-flex flex-column">
+                            <a href="#!" class="product__name">
+                                Intelligent Marble Knife
+                            </a>
+                            <div class="product__group-prices">
+                                <p class="real__price">$134.27</p>
+                                <p class="sale__price">$132.93</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gap-3 product__group d-flex align-items-center">
+                        <div class="product__img-wrapper">
+                            <img src="./images/shop-img-2.jpg" alt="product"
+                                class="product__img w-100 h-100 object-fix-cover" />
+                        </div>
+                        <div class="gap-2 product__img-info d-flex flex-column">
+                            <a href="#!" class="product__name">Small Cotton Wallet</a>
+                            <div class="product__group-prices">
+                                <p class="normal__price">$626.13</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gap-3 product__group d-flex align-items-center">
+                        <div class="product__img-wrapper">
+                            <img src="./images/shop-img-1.jpg" alt="product"
+                                class="product__img w-100 h-100 object-fix-cover" />
+                        </div>
+                        <div class="gap-2 product__img-info d-flex flex-column">
+                            <a href="#!" class="product__name">Durable Silk Chair</a>
+                            <div class="product__group-prices">
+                                <p class="normal__price">$180.28</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__new__sale">
+                        <div class="percent__discount">30% Off</div>
+                        <p class="product__new__sale__logan">
+                            your favorite brands of pet food
+                        </p>
+                        <a href="#!" class="py-3 btn btn-light fw-bold text-uppercase product__new__sale__btn">
+                            EXPLORE NOW
+                            <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 2px">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="text-white fas fa-play fa-stack-1x"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="px-4 shop__list-products w-100">
+            <div class="list-products__header d-flex align-items-center justify-content-between">
+                <div class="gap-3 list-products__header__view d-flex text-secondary">
+                    <i class="fa-solid fa-list-ul view-list" role="button"></i><i
+                        class="fa-solid fa-table-cells-large view-table view-selected" role="button"></i>
+                </div>
+                <div class="p-2 rounded wishlist wishlist-on-pc" role="button">
+                    <i class="fa-solid fa-heart-circle-check"></i>
+                    <span>WishList</span>
+                </div>
+                <div class="filter-on-table-mobile position-relative">
+                    <div class="filterTM__btn">
+                        <span>Filter</span>
+                        <i class="fa-solid fa-filter"></i>
+                    </div>
+
+                    <div class="filter-on-table-mobile-sidebar position-absolute z-index-999">
+                        <div class="shop__sidebar__categories">
+                            <h4
+                                class="pb-2 categories__header shop__sidebar__title d-flex justify-content-between align-items-center">
+                                Categories
+                                <i class="fa-solid fa-xmark fs-4 text-danger close-filter-on-table-mobile-sidebar"></i>
+                            </h4>
+                            <div class="gap-4 mt-3 categories__inner d-flex flex-column">
+                                <div class="gap-2 category__group d-flex align-items-center">
+                                    <div
+                                        class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                                    </div>
+                                    <p class="category__text shop__sidebar__text">
+                                        Dry Food
+                                    </p>
+                                </div>
+                                <div class="gap-2 category__group d-flex align-items-center">
+                                    <div
+                                        class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                                    </div>
+                                    <p class="category__text shop__sidebar__text">
+                                        Fresh & Prepared Meal
+                                    </p>
+                                </div>
+                                <div class="gap-2 category__group d-flex align-items-center">
+                                    <div
+                                        class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                                    </div>
+                                    <p class="category__text shop__sidebar__text">
+                                        Healthacare
+                                    </p>
+                                </div>
+                                <div class="gap-2 category__group d-flex align-items-center">
+                                    <div
+                                        class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                                    </div>
+                                    <p class="category__text shop__sidebar__text">
+                                        Premium Food
+                                    </p>
+                                </div>
+                                <div class="gap-2 category__group d-flex align-items-center">
+                                    <div
+                                        class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                                    </div>
+                                    <p class="category__text shop__sidebar__text">
+                                        Uncategorized
+                                    </p>
+                                </div>
+                                <div class="gap-2 category__group d-flex align-items-center">
+                                    <div
+                                        class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                                    </div>
+                                    <p class="category__text shop__sidebar__text">
+                                        Veterinary Diets
+                                    </p>
+                                </div>
+                                <div class="gap-2 category__group d-flex align-items-center">
+                                    <div
+                                        class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                                    </div>
+                                    <p class="category__text shop__sidebar__text">
+                                        Vitamins & Supplements
+                                    </p>
+                                </div>
+                                <div class="gap-2 category__group d-flex align-items-center category__dropdown"
+                                    id="category__dropdown-tm">
+                                    <div
+                                        class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                                    </div>
+                                    <p class="category__text shop__sidebar__text">
+                                        Wet Food
+                                    </p>
+                                    <i class="fa-solid fa-plus ms-auto category__dropdown-icon"></i>
+                                </div>
+                                <div class="category__dropdown__panel" id="category__dropdown__panel-tm"
+                                    style="display: none">
+                                    <div class="gap-2 mt-2 category__group d-flex align-items-center ps-3">
+                                        <div
+                                            class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                                        </div>
+                                        <p class="category__text shop__sidebar__text">
+                                            Chicken Free
+                                        </p>
+                                    </div>
+                                    <div class="gap-2 mt-2 category__group d-flex align-items-center ps-3">
+                                        <div
+                                            class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                                        </div>
+                                        <p class="category__text shop__sidebar__text">
+                                            Puppy
+                                        </p>
+                                    </div>
+                                    <div class="gap-2 mt-2 category__group d-flex align-items-center ps-3">
+                                        <div
+                                            class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                                        </div>
+                                        <p class="category__text shop__sidebar__text">
+                                            Senior
+                                        </p>
+                                    </div>
+                                    <div class="gap-2 mt-2 category__group d-flex align-items-center ps-3">
+                                        <div
+                                            class="border category__icon-select shop__sidebar__icon-select rounded-circle border-light-subtle border-3">
+                                        </div>
+                                        <p class="category__text shop__sidebar__text">
+                                            Weight Control
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-1 mt-2 rounded wishlist wishlist-on-mobile" role="button">
+                            <i class="fa-solid fa-heart-circle-check"></i>
+                            <span>WishList</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gap-3 list-products__header__sort d-flex">
+                    <select name="sort" id="sort" class="options__select">
+                        <option value="none" selected>
+                            Default sorting
+                        </option>
+                        <option value="LTH">
+                            Sort by price: low to high
+                        </option>
+                        <option value="HTL">
+                            Sort by price: high to low
+                        </option>
+                    </select>
+                    <span class="info-view">showing 12 of
+                        <span class="total-product">15</span>
+                        results</span>
+                </div>
+            </div>
+            <div class="mt-5 list-products__body list-products__body-table"></div>
+            <div class="pagination"></div>
+        </div>
+    </main>
+
+    <footer class="pb-6 text-center text-white footer pt-7 lg-text text-md-start">
+        <div class="container">
+            <div
+                class="flex-wrap gap-5 mb-5 d-flex flex-column flex-md-row gap-md-0 justify-content-between align-items-center">
+                <img src="images/logo.svg" alt="" style="width: 100px" />
+                <div class="gap-2 location d-flex">
+                    <span><i class="fa-regular fa-location-dot text-primary"></i></span>
+                    <p class="m-0 fw-bold">
+                        48 West Temple Drive <br />
+                        Ashburn, VA 20147
+                    </p>
+                </div>
+                <div class="gap-2 open-time d-flex">
+                    <span><i class="fa-regular fa-clock text-primary"></i></span>
+                    <div>
+                        <p class="m-0 fw-bold">Mon to Sun:</p>
+                        <p class="m-0">10:00 AM To 6:00 PM</p>
+                    </div>
+                </div>
+                <div class="gap-2 location d-flex">
+                    <span><i class="fa-regular fa-envelope text-primary"></i></span>
+                    <div>
+                        <p class="m-0 fw-bold">Email Us:</p>
+                        <p class="m-0">support@example.com</p>
+                    </div>
+                </div>
+                <p class="m-0 phone-number fw-bold text-primary fs-2">
+                    (844)-1800333556
+                </p>
+            </div>
+            <img class="mb-5" src="images/footer_divide.png" alt="" style="max-width: 100%" />
+            <div class="row mb-7">
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <h4 class="fw-bold">
+                            Join our community & save $3.00 on wellness!
+                        </h4>
+                    </div>
+                    <div class="mb-3">
+                        <p class="text-white-50">
+                            We'll help you find the food that is right for
+                            your pet even if it isn't our own.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="#" class="py-3 btn btn-light fw-bold text-uppercase">
+                            Sign up
+                            <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 2px">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="text-white fas fa-play fa-stack-1x"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-5 col-md-9 mt-md-0">
+                    <div class="gap-5 row gap-md-0">
+                        <div class="offset-md-2 col-md-2">
+                            <div class="mb-4">
+                                <p class="fw-bold text-uppercase xl-text">
+                                    Our Products
+                                </p>
+                            </div>
+                            <ul class="gap-2 list-unstyled vstack">
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">For Cats</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">For Dogs</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Challenger</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">FreeStyle for Cats</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">FreeStyle for Dogs</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="offset-md-2 col-md-2">
+                            <div class="mb-3">
+                                <p class="fw-bold text-uppercase xl-text">
+                                    Community
+                                </p>
+                            </div>
+                            <ul class="gap-2 list-unstyled vstack">
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">News & Stories</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Mix-It Recipes</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Our Story</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Retailer Asset Portal</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="offset-md-2 col-md-2">
+                            <div class="mb-3">
+                                <p class="fw-bold text-uppercase xl-text">
+                                    Get in touch
+                                </p>
+                            </div>
+                            <ul class="gap-2 list-unstyled vstack">
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Careers</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Contact us</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Find a Retailer</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Policies</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 d-flex flex-column flex-md-row">
+                    <p class="text-white-50">
+                        Copyright &copy; 2021
+                        <span class="text-white">Gopet</span>. All rights
+                        reserved
+                    </p>
+                    <div class="ms-md-auto">
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="text-white fab fa-facebook-f fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="text-white fab fa-twitter fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="text-white fab fa-instagram fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="text-white fab fa-pinterest fa-stack-1x"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/navbar-effect.js"></script>
+    <script src="js/data-products.js"></script>
+    <script src="js/shopping-cart.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+
+</html>

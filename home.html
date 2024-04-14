@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Pet Food</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/fontawesome.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="font-size: 14px;">
+        <div class="container-fluid">
+
+            <!-- the hamburger -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-on-mobile">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- the brand -->
+            <a class="navbar-brand mx-auto" href="home.html">
+                <img src="images/logo.svg" alt="" style="width: 75px;">
+            </a>
+
+            <!-- the cart on small screen => mobile -->
+            <li class="ms-auto d-inline-block d-lg-none cart-show">
+                <a class="nav-link-mobile p-0" data-bs-toggle="offcanvas" data-bs-target="#shoppingCartOffcanvas">
+                    <span><i class="fa-solid fa-cart-shopping text-primary"></i></span>
+                </a>
+            </li>
+
+            <!-- the nav bar on large screen => desktop -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navbar-nav-1 ms-lg-6 mb-lg-0 fw-bold">
+                    <li class="nav-item">
+                        <a class="nav-link active nav-link-hover" aria-current="page" href="home.html">
+                            <span class="nav-link-hover">HOME</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="shop.html">
+                            <span class="nav-link-hover">SHOP</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="about.html">
+                            <span class="nav-link-hover">ABOUT</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="blog.html">
+                            <span class="nav-link-hover">BLOG</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-hover dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <span class="nav-link-hover">PAGES</span>
+                            <i class="fa-solid fa-plus md-text position-absolute"></i>
+                        </a>
+                        <ul class="dropdown-menu shadow-lg rounded-4">
+                            <li>
+                                <a class="dropdown-item" href="faq.html">
+                                    <span class="nav-link-hover">FAQ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+                            </li>
+                            <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                            <li>
+                                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+                            </li>
+                            <li><a class="dropdown-item" href="team-members.html">Members</a></li>
+                            <li>
+                                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+                            </li>
+                            <li><a class="dropdown-item" href="sitemap.html">Sitemap</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="contact.html">
+                            <span class="nav-link-hover">CONTACT</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-2 ms-auto mb-2 mb-lg-0 fw-bold d-flex">
+                    <li class="nav-item">
+                        <a class="nav-link p-0" href="#">
+                            <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
+                            Store Locator
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown dropstart">
+                        <a class="nav-link p-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            href="#">
+                            <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
+                            Sign In
+                        </a>
+                        <div class="dropdown-menu p-0">
+                            <div class="sign-in border border-primary px-4 pt-5 pb-3 bg-light text-black"
+                                style="min-width: 350px;">
+                                <div class="d-flex justify-content-between">
+                                    <h3>Sign in</h3>
+                                    <a href="#" class="text-primary">Create an Account</a>
+                                </div>
+                                <form class="mb-3">
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">Username or email <span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control text-black" type="text" id="username"
+                                            placeholder="Username">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password <span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control text-black" type="text" id="password"
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary fw-bold text-uppercase">
+                                            Login
+                                            <span class="fa-stack sm-text ms-1" style="margin-bottom: 1px;">
+                                                <i class="fas fa-circle fa-stack-2x text-black"></i>
+                                                <i class="fas fa-play fa-stack-1x text-primary"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </form>
+                                <div class="text-end">
+                                    <p class="text-primary">Lost your password?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-0" href="#" data-bs-toggle="offcanvas"
+                            data-bs-target="#shoppingCartOffcanvas">
+                            <span class="me-2"><i class="fa-solid fa-cart-shopping text-primary"></i></span>
+                            Cart
+                            <span class="fa-stack ms-1" style="font-size: 10px;">
+                                <i class="fas fa-circle text-primary fa-stack-2x"></i>
+                                <p class="fa-stack-1x text-black cart-count">0</p>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- the shopping cart offcanvas -->
+    <div class="offcanvas offcanvas-end text-black" tabindex="-1" id="shoppingCartOffcanvas"
+        aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header border-bottom py-4">
+            <h5 class="offcanvas-title" id="offcanvasLabel">Shopping cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p class="text-black-50 text-center xxl-text cart-show-body">No products in the cart</p>
+        </div>
+    </div>
+
+    <!-- the nav bar canvas on small screen => mobile  -->
+    <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="navbar-on-mobile" style="z-index: 1055">
+        <div class="offcanvas-header px-4 pt-4">
+            <h5 class="offcanvas-title fw-bold" id="offcanvasLabel">main menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <img class="mx-4" src="images/line-break.png" alt="" style="width: 60px;">
+        <div class="offcanvas-body">
+            <ul class="navbar-nav-mobile fw-bold list-group list-group-flush">
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none active" href="#">HOME</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">SHOP</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">ABOUT</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">BLOG</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">PAGES</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">CONTACT</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none p-0" href="#">
+                        <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
+                        Store Locator
+                    </a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3 dropdown dropstart">
+                    <a class="navbar-link-mobile text-decoration-none p-0" data-bs-toggle="modal"
+                        data-bs-target="#signInModal" href="#">
+                        <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
+                        Sign In
+                    </a>
+                    <!-- Modal -->
+                    <div class="modal fade" id="signInModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                        style="z-index: 1800;">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header border-bottom-0    ">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-0">
+                                    <div class="sign-in px-4 pt-3 pb-3 bg-light text-black w-100">
+                                        <div class="d-flex justify-content-between">
+                                            <h3>Sign in</h3>
+                                            <a href="#" class="text-primary">Create an Account</a>
+                                        </div>
+                                        <form class="mb-3">
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Username or email <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control text-black" type="text" id="username"
+                                                    placeholder="Username">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password" class="form-label">Password <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control text-black" type="text" id="password"
+                                                    placeholder="Password">
+                                            </div>
+                                            <div class="d-grid">
+                                                <button class="btn btn-primary fw-bold text-uppercase">
+                                                    Login
+                                                    <span class="fa-stack sm-text ms-1" style="margin-bottom: 1px;">
+                                                        <i class="fas fa-circle fa-stack-2x text-black"></i>
+                                                        <i class="fas fa-play fa-stack-1x text-primary"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <div class="text-end">
+                                            <p class="text-primary">Lost your password?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <header class="header pt-9 pb-8 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="d-none d-lg-block col-lg-3">
+                    <div class="img-container text-end">
+                        <img class="header-img-1" src="images/header-1.jpg" alt="">
+                        <img class="header-img-2" src="images/header-2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="offset-lg-1 col-lg-7">
+                    <div class="d-flex flex-column justify-content-center h-100 gap-4">
+                        <h1 class="header-heading fw-bold display-2 px-3 px-lg-0 position-relative">
+                            <img class="position-absolute header-img-3" src="images/header-3.png" alt="">
+                            Slow-Cooked Pet Food for Optimal Nutrition & Taste
+                        </h1>
+                        <p class="fs-4 text-center text-lg-start">Get your pet more of the good stuff at your local
+                            pet
+                            store!</p>
+                        <div class="text-center text-lg-start"><button class="btn btn-primary text-uppercase fw-bold">
+                                Browse
+                                Products
+                                <span class="fa-stack sm-text ms-1" style="margin-bottom: 1px;">
+                                    <i class="fas fa-circle fa-stack-2x text-black"></i>
+                                    <i class="fas fa-play fa-stack-1x text-primary"></i>
+                                </span>
+                            </button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="details-1 py-8 bg-light text-black position-relative">
+        <img class="position-absolute details-1-bg-1" src="images/details-1-bg-1.png" alt="">
+        <img class="position-absolute details-1-bg-2 d-none d-md-block" src="images/details-1-bg-2.png" alt="">
+        <div class="container position-relative z-3">
+            <div class="row mb-5">
+                <div class="offset-md-3 col-md-6">
+                    <div
+                        class="text-container d-flex flex-column justify-content-center align-items-center text-center">
+                        <h3 class="fw-bold mb-4 display-5">What makes us different makes them stronger</h3>
+                        <img class="mb-4" src="images/line-break.png" alt="">
+                        <p>The process of cooking at lower temperature & at slower rates leads to an increase in
+                            nutrient retention.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-md-3">
+                    <div class="d-flex flex-column justify-content-center h-100 gap-4">
+                        <div class="row">
+                            <div class="col-3 d-flex">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fas fa-carrot fa-stack-1x"></i>
+                                </span>
+                            </div>
+                            <div class="col-9">
+                                <h5 class="fw-bold">Real Food</h5>
+                                <p>Human-grade meat and veggies in simple recipes, made for dogs</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-3 d-flex">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fa fa-paw fa-stack-1x"></i>
+                                </span>
+                            </div>
+                            <div class="col-9">
+                                <h5 class="fw-bold">Premiumn Ingredient</h5>
+                                <p>Safety and quality neer before available to pets</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-md-block col-md-6 px-7">
+                    <img src="images/food.png" alt="" style="width: 100%">
+                </div>
+                <div class="col-md-3">
+                    <div class="d-flex flex-column justify-content-center h-100 gap-4">
+                        <div class="row">
+                            <div class="col-3 d-flex">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fas fa-bowl-food fa-stack-1x"></i>
+                                </span>
+                            </div>
+                            <div class="col-9">
+                                <h5 class="fw-bold">Made Fresh</h5>
+                                <p>Maintain whole food and nutritional integrity</p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-3 d-flex">
+                                <span class="fa-stack fa-2x">
+                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fas fa-bottle-droplet fa-stack-1x"></i>
+                                </span>
+                            </div>
+                            <div class="col-9">
+                                <h5 class="fw-bold">Vet Developed</h5>
+                                <p>Nutrition that exceeds industry standards for dogs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="d-flex justify-content-center">
+                    <div class="button-group hstack gap-3">
+                        <button class="btn btn-primary text-uppercase fw-bold">
+                            See dog food
+                            <span class="fa-stack sm-text ms-1" style="margin-bottom: 2px;">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-play fa-stack-1x text-primary"></i>
+                            </span>
+                        </button>
+                        <button class="btn btn-light text-uppercase fw-bold">
+                            See cat food
+                            <span class="fa-stack sm-text ms-1" style="margin-bottom: 2px;">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fas fa-play fa-stack-1x text-white"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="details-2 py-7 text-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="images/details-2-img.png" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex flex-column justify-content-center h-100">
+                        <h2 class="fw-bold display-3 mb-5">Choosing the right food for your pet</h2>
+                        <img class="mb-5" src="images/line-break.png" alt="" style="width: 70px">
+                        <p class="mb-5">Let's get real, you don't have to be a Veterinary Nutritionist to know
+                            good food. But it's
+                            nice o have on eon staff. Dont feed y9our pets fast food. Nurture them with our slow-cooked
+                            recipes for healthier, happier pets.</p>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <ul class="list-unstyled">
+                                    <li class="d-flex align-items-center gap-2 mb-3">
+                                        <span class="fa-stack">
+                                            <i class="fas fa-circle fa-stack-2x text-success"></i>
+                                            <i class="fas fa-check fa-stack-1x text-white"></i>
+                                        </span>
+                                        <p class="fw-semibold m-0">Made in the USA</p>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-2 mb-3">
+                                        <span class="fa-stack">
+                                            <i class="fas fa-circle fa-stack-2x text-success"></i>
+                                            <i class="fas fa-check fa-stack-1x text-white"></i>
+                                        </span>
+                                        <p class="fw-semibold m-0">High quality ingredients</p>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-2 mb-3">
+                                        <span class="fa-stack">
+                                            <i class="fas fa-circle fa-stack-2x text-success"></i>
+                                            <i class="fas fa-check fa-stack-1x text-white"></i>
+                                        </span>
+                                        <p class="fw-semibold m-0">Complete & balanced</p>
+                                    </li>
+                                    <li class="d-flex align-items-center gap-2 mb-3">
+                                        <span class="fa-stack">
+                                            <i class="fas fa-circle fa-stack-2x text-success"></i>
+                                            <i class="fas fa-check fa-stack-1x text-white"></i>
+                                        </span>
+                                        <p class="fw-semibold m-0">No additives or fillers</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="offset-md-1 col-md-6 mt-5 mt-md-0">
+                                <p class="fw-bold">If you have any questions or need help, call us any time</p>
+                                <p class="text-danger fw-bold mb-4">(844)-1800333556</p>
+                                <button class="btn btn-light text-uppercase fw-bold">
+                                    Get started
+                                    <span class="fa-stack sm-text ms-1" style="margin-bottom: 2px;">
+                                        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                        <i class="fas fa-play fa-stack-1x text-white"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="statistics pt-7 pb-6 position-relative text-white">
+        <img class="position-absolute statistic-img-1" src="images/statistic-img-1.png" alt="">
+        <img class="position-absolute statistic-img-2" src="images/statistic-img-2.png" alt="">
+        <div class="container position-relative z-3">
+            <div class="row">
+                <div class="offset-md-3 col-md-6">
+                    <div class="d-flex flex-column justify-content-center h-100">
+                        <h2 class="fw-bold mb-3 display-3 text-center">Take control of your pet's health</h2>
+                        <div class="img-container text-center"><img class="mb-4" src="images/line-break.png" alt=""
+                                style="width: 60px"></div>
+                        <p class="mb-5 text-center">The process of cooking at lower temperatures & at slower rates leads
+                            to
+                            an increase
+                            in nutrient retention.</p>
+                        <div class="row mb-6">
+                            <div class="col-md-6">
+                                <div class="d-flex justify-content-center gap-4">
+                                    <span><i class="fa-solid fa-bone text-white fa-4x"></i></span>
+                                    <div>
+                                        <h3 class="fw-bold fs-1">1,258</h3>
+                                        <p class="fw-bold">pet feeding</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-flex justify-content-center gap-4">
+                                    <span><i class="fa-solid fa-house text-white fa-4x"></i></span>
+                                    <div>
+                                        <h3 class="fw-bold fs-1">789</h3>
+                                        <p class="fw-bold">happy owners</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary fw-bold">
+                                SHOP ALL FOOD
+                                <span class="fa-stack sm-text ms-1" style="margin-bottom: 2px;">
+                                    <i class="fas fa-circle fa-stack-2x text-black"></i>
+                                    <i class="fas fa-play fa-stack-1x text-primary"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process text-black pt-5 pt-md-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 position-relative">
+                    <img class="position-absolute process-img-1" src="images/paw-decor-right.png" alt="">
+                    <img class="position-absolute process-img-2" src="images/details-1-bg-1.png" alt="">
+                    <div class="row h-100 position-relative z-3">
+                        <div class="offset-md-2 col-md-8">
+                            <div class="text-container d-flex flex-column h-100 justify-content-center">
+                                <h3 class="fw-bold mb-4 display-6">Made with real ingredients in a <span
+                                        class="d-inline d-md-block"></span> human-grade kitchen
+                                </h3>
+                                <img class="mb-4" src="images/line-break.png" alt="" style="width: 60px;">
+                                <p class="mb-2 text-black-50">We offer exceptional dog food, rooted in science, to
+                                    deliver
+                                    essential
+                                    nutritional solutions with unmatched quality.</p>
+                                <p class="mb-5">Two important steps are helping pets maintain a healthy weight and
+                                    ensuring
+                                    they
+                                    receive complete nutrition.</p>
+                                <div>
+                                    <button class="btn btn-light text-uppercase fw-bold">
+                                        Our Process
+                                        <span class="fa-stack sm-text ms-1" style="margin-bottom: 2px;">
+                                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                            <i class="fas fa-play fa-stack-1x text-white"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 border p-0 border-0">
+                    <img class="d-none d-md-block" src="images/process-img-1.jpg" alt="" style="width: 100%">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy text-black py-5 py-md-0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 p-0 border-0">
+                    <img class="d-none d-md-block" src="images/meat.jpg" alt="" style="width: 100%">
+                </div>
+                <div class="col-md-6 position-relative">
+                    <img class="position-absolute philosiphy-img-1" src="images/header-3.png" alt="">
+                    <img class="position-absolute philosiphy-img-2" src="images/philosiphy.png" alt="">
+                    <div class="row h-100 position-relative z-3">
+                        <div class="offset-md-1 col-md-8">
+                            <div class="d-flex flex-column justify-content-center h-100">
+                                <h2 class="fw-bold mb-4 display-5">Our nutrition philosophy</h2>
+                                <img class="mb-4" src="images/line-break.png" alt="" style="width: 60px">
+                                <div class="row mb-4">
+                                    <div class="col-md-5">
+                                        <p class="text-black-50">Animal-bases proteins to build muscle. Low carbs and
+                                            low-glycemic ingredients to maintain healthy weight. And probiotics to boost
+                                            immunity.</p>
+                                    </div>
+                                    <div class="offset-md-1 col-md-6">
+                                        <ul class="list-unstyled vstack gap-2">
+                                            <li class="d-flex align-items-center gap-3">
+                                                <span class="fa-stack">
+                                                    <i class="fas fa-circle fa-stack-2x text-success"></i>
+                                                    <i class="fas fa-check fa-stack-1x text-white"></i>
+                                                </span>
+                                                <p class="fw-bold m-0">Pet nutritionists</p>
+                                            </li>
+                                            <li class="d-flex align-items-center gap-3">
+                                                <span class="fa-stack">
+                                                    <i class="fas fa-circle fa-stack-2x text-success"></i>
+                                                    <i class="fas fa-check fa-stack-1x text-white"></i>
+                                                </span>
+                                                <p class="fw-bold m-0">Health & well-being</p>
+                                            </li>
+                                            <li class="d-flex align-items-center gap-3">
+                                                <span class="fa-stack">
+                                                    <i class="fas fa-circle fa-stack-2x text-success"></i>
+                                                    <i class="fas fa-check fa-stack-1x text-white"></i>
+                                                </span>
+                                                <p class="fw-bold m-0">Vitamins C & E</p>
+                                            </li>
+                                            <li class="d-flex align-items-center gap-3">
+                                                <span class="fa-stack">
+                                                    <i class="fas fa-circle fa-stack-2x text-success"></i>
+                                                    <i class="fas fa-check fa-stack-1x text-white"></i>
+                                                </span>
+                                                <p class="fw-bold m-0">Taurine & I-carnitine</p>
+                                            </li>
+                                            <li class="d-flex align-items-center gap-3">
+                                                <span class="fa-stack">
+                                                    <i class="fas fa-circle fa-stack-2x text-success"></i>
+                                                    <i class="fas fa-check fa-stack-1x text-white"></i>
+                                                </span>
+                                                <p class="fw-bold m-0">Omega fatty acids</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="btn btn-light fw-bold text-uppercase">
+                                        Explore now
+                                        <span class="fa-stack sm-text ms-1" style="margin-bottom: 2px;">
+                                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                            <i class="fas fa-play fa-stack-1x text-white"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products py-7 text-black">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="offset-md-3 col-md-6">
+                    <div class="text-container text-center">
+                        <div class="mb-4">
+                            <h2 class="fw-bold display-5">Featured products</h2>
+                        </div>
+                        <div class="mb-4">
+                            <img src="images/line-break.png" alt="" style="width: 60px;">
+                        </div>
+                        <div class="mb-4">
+                            <p class="text-black-50">You can order multiple recipes. Perfect for taste-testing and
+                                offering your dog a variety of flavors! Bring it on, picky pups.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="product-block pt-3">
+                        <a href="#" class="card border-0 rounded-0 text-decoration-none">
+                            <div class="mb-3"><img src="images/product-1.jpg" alt=""
+                                    class="card-img border-0 rounded-0">
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3 text-black">
+                                    <p class="text-center">Intelligent Marble Knife</p>
+                                </div>
+                                <div class="d-flex gap-1 align-items-center justify-content-center">
+                                    <p class="md-text text-black-50"><s>$134.27</s></p>
+                                    <p class="fw-bold text-primary">$132.93</p>
+                                </div>
+
+                            </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-block pt-3">
+                        <a href="#" class="card border-0 rounded-0 text-decoration-none">
+                            <div class="mb-3 position-relative">
+                                <img src="images/product-2.jpg" alt="" class="card-img border-0 rounded-0">
+                                <div class="group-action position-absolute">
+                                    <div class="shop-action">
+                                        <span class="product-detail-button fa-stack">
+                                            <i class="fas fa-circle fa-stack-2x text-white"></i>
+                                            <i class="fas fa-link fa-stack-1x text-black"></i>
+                                        </span>
+                                        <span class="wish-list-button fa-stack">
+                                            <i class="fas fa-circle fa-stack-2x text-white"></i>
+                                            <i class="fas fa-heart fa-stack-1x text-black"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3 text-black">
+                                    <p class="text-center">Small Cotton Wallet</p>
+                                </div>
+                                <div class="d-flex gap-1 align-items-center justify-content-center">
+                                    <p class="fw-bold text-black">$626.13</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-block pt-3">
+                        <a href="#" class="card border-0 rounded-0 text-decoration-none">
+                            <div class="mb-3"><img src="images/product-3.jpg" alt=""
+                                    class="card-img border-0 rounded-0">
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3 text-black">
+                                    <p class="text-center">Durable Silk Chair</p>
+                                </div>
+                                <div class="d-flex gap-1 align-items-center justify-content-center">
+                                    <p class="fw-bold text-black">$180.28</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="product-block pt-3">
+                        <a href="#" class="card border-0 rounded-0 text-decoration-none">
+                            <div class="mb-3"><img src="images/product-4.jpg" alt=""
+                                    class="card-img border-0 rounded-0">
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3 text-black">
+                                    <p class="text-center">Incredible Copper Hat</p>
+                                </div>
+                                <div class="d-flex gap-1 align-items-center justify-content-center">
+                                    <p class="fw-bold text-black">$815.57</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ytb-video">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="ytb-video-body pt-5 pb-2 pt-md-9 pb-md-8 bg-black">
+                    <div class="play-button-container d-flex justify-content-center">
+                        <a data-bs-toggle="modal" data-bs-target="#ytb-video">
+                            <span class="fa-stack fa-4x">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fas fa-play fa-stack-1x text-white"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="offset-md-4 col-md-4 text-center text-white">
+                            <h3 class="fw-bold display-5">Let's find the perfect food for your pet</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="ytb-video" tabindex="-1" aria-labelledby="youtubeVideoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body p-0" style="height: 600px">
+                        <iframe width="100%" height="100%"
+                            src="https://www.youtube.com/embed/7vF06ITJA0I?list=RDjbwcvCCow90"
+                            title="Attack on Titan: T-KT (ThanksAT) x ShingekiNoKyojin | EPIC EMOTIONAL COVER"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="experts py-5 py-md-7 text-black text-center text-md-end">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 position-relative">
+                    <div class="mb-3">
+                        <h3 class="fw-bold display-5">Meet two of Gopet experts</h3>
+                    </div>
+                    <div class="mb-3">
+                        <img src="images/line-break.png" alt="" style="width: 60px;">
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-black-50">Learn more about some of the expertise behind Gopet by clicking on
+                            their image.</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary text-uppercase fw-bold">
+                            Explore Now
+                            <span class="fa-stack sm-text ms-1" style="margin-bottom: 2px;">
+                                <i class="fas fa-circle fa-stack-2x text-black"></i>
+                                <i class="fas fa-play fa-stack-1x text-primary"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <img class="d-none d-md-block position-absolute arrow-decor" src="images/arrow-decor.png" alt=""
+                        style="width: 200px;">
+                </div>
+                <div class="offset-md-3 col-md-2 mt-4 mt-md-0">
+                    <div class="text-center">
+                        <div class="img-container mb-4">
+                            <img src="images/expert-1.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="mb-2">
+                            <h5 class="fw-bold">Emma Passman</h5>
+                        </div>
+                        <p class="fw-semibold text-black-50">Head of nutrition</p>
+                    </div>
+                </div>
+                <div class="offset-md-1 col-md-2 mt-4 mt-md-0">
+                    <div class="text-center">
+                        <div class="img-container mb-4">
+                            <img src="images/expert-2.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="mb-2">
+                            <h5 class="fw-bold">Anthony Chadwick</h5>
+                        </div>
+                        <p class="fw-semibold text-black-50">Advisor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials text-black py-7">
+        <div class="container">
+            <div class="row">
+                <div class="offset-md-4 col-md-4 mb-4">
+                    <div class="text-center">
+                        <div class="mb-3">
+                            <h3 class="fw-bold display-6">Our clients love us!</h3>
+                        </div>
+                        <div class="mb-3">
+                            <img src="images/line-break.png" alt="" style="width: 60px;">
+                        </div>
+                        <div>
+                            <p class="text-black-50 lg-text">Testimonials & Reviews - What our customers are saying.....
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row position-relative">
+                <img class="position-absolute quote-img" src="images/quote.png" alt="">
+                <div class="offset-md-4 col-md-4">
+                    <div id="testimonial-carousel" class="carousel slide" style="min-height: 450px">
+                        <div class="carousel-indicators">
+                            <button class="active" type="button" data-bs-target="#testimonial-carousel"
+                                data-bs-slide-to="0" aria-current="true" aria-label="Slide 1">
+                            </button>
+                            <button class="" type="button" data-bs-target="#testimonial-carousel" data-bs-slide-to="1"
+                                aria-label="Slide 2">
+                            </button>
+                            <button class="" type="button" data-bs-target="#testimonial-carousel" data-bs-slide-to="2"
+                                aria-label="Slide 3">
+                            </button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class=" carousel-item active">
+                                <div class="text-center">
+                                    <div class="img-container mb-4">
+                                        <img class="rounded-circle" src="images/testimonial-person-1.png" alt="">
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="offset-md-1 col-md-10">
+                                            <p class="fst-italic fw-bold">I like pet shop more and more each day because
+                                                it makes my life a lot easier. I rotate a variety of proteins and
+                                                everybody's happy. I feel good feeding to her. Thanks so much!</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="fw-bold mb-2">Marlie Doe</p>
+                                        <p class="text-black-50">Dog Owner - Florida</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="text-center">
+                                    <div class="img-container mb-4">
+                                        <img class="rounded-circle" src="images/testimonial-person-1.png" alt="">
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="offset-md-1 col-md-10">
+                                            <p class="fst-italic fw-bold">Thank you so much! My cat has severe food
+                                                allergies and pretty much can only eat rabbit, apples, and chicken. this
+                                                is the only way I can feed her without her throwing up all the time and
+                                                chewing her fur out.</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="fw-bold mb-2">Jack Morrison</p>
+                                        <p class="text-black-50">Dog Owner - Ontario</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="text-center">
+                                    <div class="img-container mb-4">
+                                        <img class="rounded-circle" src="images/testimonial-person-3.png" alt="">
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="offset-md-1 col-md-10">
+                                            <p class="fst-italic fw-bold">This is simply unbelievable! Pet ship did
+                                                exactly what you said it does. I'm good to go. Pet shop is great. One
+                                                cats horrid breath...gone! One cat from a bit 'toround' to almost
+                                                perfect weight.</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="fw-bold mb-2">Waylan S.</p>
+                                        <p class="text-black-50">Cat Owner - Colorado</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <section class="subscribe">
+        <div class="container bg-success py-7 rounded-0 rounded-md-4 position-relative subscribe-body">
+            <img class="position-absolute subscribe-img" src="images/subscribe-img.png" alt="">
+            <div class="row">
+                <div class="offset-md-3 col-md-6">
+                    <div class="h-100 d-flex flex-column justify-content-center">
+                        <div class="mb-3">
+                            <h3 class="display-4 fw-bold text-center">Subscribe to our newsletter</h3>
+                        </div>
+                        <div class="button-group d-flex gap-2">
+                            <input type="email" class="form-control rounded-5 text-black"
+                                placeholder="Enter your email...">
+                            <button class="btn btn-primary fw-bold text-uppercase d-flex align-items-center">
+                                Subscribe
+                                <span class="fa-stack sm-text ms-1" style="margin-bottom: 1px;">
+                                    <i class="fas fa-circle fa-stack-2x text-black"></i>
+                                    <i class="fas fa-play fa-stack-1x text-primary"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-post pt-10 pb-8 text-black" style="margin-top: -120px">
+        <div class="container">
+            <div class="text-container text-center mb-4">
+                <div class="mb-3">
+                    <h3 class="fw-bold display-5">Recent blog post</h3>
+                </div>
+                <div>
+                    <img src="images/line-break.png" alt="" style="width: 60px;">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card text-black rounded-4 shadow-lg">
+                        <img class="rounded-top-4" src="images/blog-img-1.png" alt="" class="card-img-top ">
+                        <div class="card-body">
+                            <div class="card-subtitle md-text d-flex align-items-center gap-2 mb-3">
+                                <div class="bg-primary px-3 py-1 rounded-5">Lifestyle</div>
+                                <div class="d-flex align-items-center gap-1">
+                                    <i class="fas fa-user text-primary"></i>
+                                    <p class="m-0 text-black-50">Hoanganh</p>
+                                </div>
+                                <p class="text-black-50 m-0">|</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <i class="fas fa-calendar text-primary"></i>
+                                    <p class="m-0 text-black-50">Nov 23, 2021</p>
+                                </div>
+                            </div>
+                            <h3 class="card-title fw-bold mb-2">Understanding Pet Food Labels</h3>
+                            <p class="card-text text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Aliquid quod
+                                repudiandae ea laboriosam est odit dolor ex praesentium esse porro...</p>
+                            <a href="#" class="btn btn-primary py-3 text-uppercase fw-bold"
+                                style="margin-bottom: -50px;">
+                                Read More
+                                <span class="fa-stack sm-text ms-1" style="margin-bottom: 2px;">
+                                    <i class="fas fa-circle fa-stack-2x text-black"></i>
+                                    <i class="fas fa-play fa-stack-1x text-primary"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-5 mt-md-0">
+                    <div class="card text-black rounded-4 shadow-lg">
+                        <img class="rounded-top-4" src="images/blog-img-2.png" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <div class="card-subtitle md-text d-flex align-items-center gap-2 mb-3">
+                                <div class="bg-primary px-3 py-1 rounded-5">Lifestyle</div>
+                                <div class="d-flex align-items-center gap-1">
+                                    <i class="fas fa-user text-primary"></i>
+                                    <p class="m-0 text-black-50">Hoanganh</p>
+                                </div>
+                                <p class="text-black-50 m-0">|</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <i class="fas fa-calendar text-primary"></i>
+                                    <p class="m-0 text-black-50">Nov 23, 2021</p>
+                                </div>
+                            </div>
+                            <h3 class="card-title fw-bold mb-2">Senior Pets: How Much To Feed Your Pet</h3>
+                            <p class="card-text text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Aliquid quod
+                                repudiandae ea laboriosam est odit dolor ex praesentium esse porro...</p>
+                            <a href="#" class="btn btn-primary py-3 text-uppercase fw-bold"
+                                style="margin-bottom: -50px;">
+                                Read More
+                                <span class="fa-stack sm-text ms-1" style="margin-bottom: 2px;">
+                                    <i class="fas fa-circle fa-stack-2x text-black"></i>
+                                    <i class="fas fa-play fa-stack-1x text-primary"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pb-6 text-center text-white footer pt-7 lg-text text-md-start">
+        <div class="container">
+            <div
+                class="flex-wrap gap-5 mb-5 d-flex flex-column flex-md-row gap-md-0 justify-content-between align-items-center">
+                <img src="images/logo.svg" alt="" style="width: 100px" />
+                <div class="gap-2 location d-flex">
+                    <span><i class="fa-regular fa-location-dot text-primary"></i></span>
+                    <p class="m-0 fw-bold">
+                        48 West Temple Drive <br />
+                        Ashburn, VA 20147
+                    </p>
+                </div>
+                <div class="gap-2 open-time d-flex">
+                    <span><i class="fa-regular fa-clock text-primary"></i></span>
+                    <div>
+                        <p class="m-0 fw-bold">Mon to Sun:</p>
+                        <p class="m-0">10:00 AM To 6:00 PM</p>
+                    </div>
+                </div>
+                <div class="gap-2 location d-flex">
+                    <span><i class="fa-regular fa-envelope text-primary"></i></span>
+                    <div>
+                        <p class="m-0 fw-bold">Email Us:</p>
+                        <p class="m-0">support@example.com</p>
+                    </div>
+                </div>
+                <p class="m-0 phone-number fw-bold text-primary fs-2">
+                    (844)-1800333556
+                </p>
+            </div>
+            <img class="mb-5" src="images/footer_divide.png" alt="" style="max-width: 100%" />
+            <div class="row mb-7">
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <h4 class="fw-bold">
+                            Join our community & save $3.00 on wellness!
+                        </h4>
+                    </div>
+                    <div class="mb-3">
+                        <p class="text-white-50">
+                            We'll help you find the food that is right for
+                            your pet even if it isn't our own.
+                        </p>
+                    </div>
+                    <div>
+                        <a href="#" class="py-3 btn btn-light fw-bold text-uppercase">
+                            Sign up
+                            <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 2px">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="text-white fas fa-play fa-stack-1x"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-5 col-md-9 mt-md-0">
+                    <div class="gap-5 row gap-md-0">
+                        <div class="offset-md-2 col-md-2">
+                            <div class="mb-4">
+                                <p class="fw-bold text-uppercase xl-text">
+                                    Our Products
+                                </p>
+                            </div>
+                            <ul class="gap-2 list-unstyled vstack">
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">For Cats</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">For Dogs</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Challenger</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">FreeStyle for Cats</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">FreeStyle for Dogs</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="offset-md-2 col-md-2">
+                            <div class="mb-3">
+                                <p class="fw-bold text-uppercase xl-text">
+                                    Community
+                                </p>
+                            </div>
+                            <ul class="gap-2 list-unstyled vstack">
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">News & Stories</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Mix-It Recipes</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Our Story</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Retailer Asset Portal</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="offset-md-2 col-md-2">
+                            <div class="mb-3">
+                                <p class="fw-bold text-uppercase xl-text">
+                                    Get in touch
+                                </p>
+                            </div>
+                            <ul class="gap-2 list-unstyled vstack">
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Careers</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Contact us</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Find a Retailer</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-white-50 text-decoration-none">Policies</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 d-flex flex-column flex-md-row">
+                    <p class="text-white-50">
+                        Copyright &copy; 2021
+                        <span class="text-white">Gopet</span>. All rights
+                        reserved
+                    </p>
+                    <div class="ms-md-auto">
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="text-white fab fa-facebook-f fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="text-white fab fa-twitter fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="text-white fab fa-instagram fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="text-white fab fa-pinterest fa-stack-1x"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/navbar-effect.js"></script>
+    <script src="js/data-products.js"></script>
+    <script src="js/shopping-cart.js"></script>
+    <script src="js/data-user-account.js"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

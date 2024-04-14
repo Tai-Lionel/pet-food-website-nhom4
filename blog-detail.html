@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Pet Food</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/fontawesome.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="font-size: 14px;">
+        <div class="container-fluid">
+
+            <!-- the hamburger -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-on-mobile">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- the brand -->
+            <a class="navbar-brand mx-auto" href="home.html">
+                <img src="images/logo.svg" alt="" style="width: 75px;">
+            </a>
+
+            <!-- the cart on small screen => mobile -->
+            <li class="ms-auto d-inline-block d-lg-none cart-show">
+                <a class="nav-link-mobile p-0" data-bs-toggle="offcanvas" data-bs-target="#shoppingCartOffcanvas">
+                    <span><i class="fa-solid fa-cart-shopping text-primary"></i></span>
+                </a>
+            </li>
+
+            <!-- the nav bar on large screen => desktop -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navbar-nav-1 ms-lg-6 mb-lg-0 fw-bold">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="home.html">
+                            <span class="nav-link-hover">HOME</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="shop.html">
+                            <span class="nav-link-hover">SHOP</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="about.html">
+                            <span class="nav-link-hover">ABOUT</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover active" href="blog.html">
+                            <span class="nav-link-hover">BLOG</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-hover dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <span class="nav-link-hover">PAGES</span>
+                            <i class="fa-solid fa-plus md-text position-absolute"></i>
+                        </a>
+                        <ul class="dropdown-menu shadow-lg rounded-4">
+                            <li>
+                                <a class="dropdown-item" href="faq.html">
+                                    <span class="nav-link-hover">FAQ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+                            </li>
+                            <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                            <li>
+                                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+                            </li>
+                            <li><a class="dropdown-item" href="team-members.html">Members</a></li>
+                            <li>
+                                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+                            </li>
+                            <li><a class="dropdown-item" href="sitemap.html">Sitemap</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="contact.html">
+                            <span class="nav-link-hover">CONTACT</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-2 ms-auto mb-2 mb-lg-0 fw-bold d-flex">
+                    <li class="nav-item">
+                        <a class="nav-link p-0" href="#">
+                            <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
+                            Store Locator
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown dropstart">
+                        <a class="nav-link p-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                            href="#">
+                            <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
+                            Sign In
+                        </a>
+                        <div class="dropdown-menu p-0">
+                            <div class="sign-in border border-primary px-4 pt-5 pb-3 bg-light text-black"
+                                style="min-width: 350px;">
+                                <div class="d-flex justify-content-between">
+                                    <h3>Sign in</h3>
+                                    <a href="#" class="text-primary">Create an Account</a>
+                                </div>
+                                <form class="mb-3">
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">Username or email <span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control text-black" type="text" id="username"
+                                            placeholder="Username">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password <span
+                                                class="text-danger">*</span></label>
+                                        <input class="form-control text-black" type="text" id="password"
+                                            placeholder="Password">
+                                    </div>
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary fw-bold text-uppercase">
+                                            Login
+                                            <span class="fa-stack sm-text ms-1" style="margin-bottom: 1px;">
+                                                <i class="fas fa-circle fa-stack-2x text-black"></i>
+                                                <i class="fas fa-play fa-stack-1x text-primary"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </form>
+                                <div class="text-end">
+                                    <p class="text-primary">Lost your password?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item cart-show">
+                        <a class="nav-link p-0" href="#" data-bs-toggle="offcanvas"
+                            data-bs-target="#shoppingCartOffcanvas">
+                            <span class="me-2"><i class="fa-solid fa-cart-shopping text-primary"></i></span>
+                            Cart
+                            <span class="fa-stack ms-1" style="font-size: 10px;">
+                                <i class="fas fa-circle text-primary fa-stack-2x"></i>
+                                <p class="fa-stack-1x text-black cart-count">0</p>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- the shopping cart offcanvas -->
+    <div class="offcanvas offcanvas-end text-black" tabindex="-1" id="shoppingCartOffcanvas"
+        aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header border-bottom py-4">
+            <h5 class="offcanvas-title" id="offcanvasLabel">Shopping cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p class="text-black-50 text-center xxl-text cart-show-body">No products in the cart</p>
+        </div>
+    </div>
+
+    <!-- the nav bar canvas on small screen => mobile  -->
+    <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="navbar-on-mobile" style="z-index: 1055">
+        <div class="offcanvas-header px-4 pt-4">
+            <h5 class="offcanvas-title fw-bold" id="offcanvasLabel">main menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <img class="mx-4" src="images/line-break.png" alt="" style="width: 60px;">
+        <div class="offcanvas-body">
+            <ul class="navbar-nav-mobile fw-bold list-group list-group-flush">
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">HOME</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">SHOP</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">ABOUT</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none active" href="BlogClassic.html">BLOG</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">PAGES</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">CONTACT</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none p-0" href="#">
+                        <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
+                        Store Locator
+                    </a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3 dropdown dropstart">
+                    <a class="navbar-link-mobile text-decoration-none p-0" data-bs-toggle="modal"
+                        data-bs-target="#signInModal" href="#">
+                        <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
+                        Sign In
+                    </a>
+                    <!-- Modal -->
+                    <div class="modal fade" id="signInModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                        style="z-index: 1800;">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header border-bottom-0    ">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-0">
+                                    <div class="sign-in px-4 pt-3 pb-3 bg-light text-black w-100">
+                                        <div class="d-flex justify-content-between">
+                                            <h3>Sign in</h3>
+                                            <a href="#" class="text-primary">Create an Account</a>
+                                        </div>
+                                        <form class="mb-3">
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Username or email <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control text-black" type="text" id="username"
+                                                    placeholder="Username">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password" class="form-label">Password <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control text-black" type="text" id="password"
+                                                    placeholder="Password">
+                                            </div>
+                                            <div class="d-grid">
+                                                <button class="btn btn-primary fw-bold text-uppercase">
+                                                    Login
+                                                    <span class="fa-stack super-sm-text ms-1"
+                                                        style="margin-bottom: 1px;">
+                                                        <i class="fas fa-circle fa-stack-2x text-black"></i>
+                                                        <i class="fas fa-play fa-stack-1x text-primary"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <div class="text-end">
+                                            <p class="text-primary">Lost your password?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="breadcrumb-wrapper bg-black text-white pt-8 pb-8">
+        <div class="container">
+            <div class="row">
+                <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                    <!-- Change into the name of the page -->
+                    <h2 class="fw-bold display-2">Blog</h2>
+                    <div class="d-flex gap-2 lg-text">
+                        <a href="home.html" class="m-0 text-decoration-none link-light">Home Page</a>
+                        <span class="text-primary">
+                            <i class="fas fa-circle" style="transform: scale(0.5);"></i>
+                        </span>
+                        <!-- Change into the name of the page -->
+                        <p class="m-0 text-white-50">Blog</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Your code goes here -->
+    <section class="content-wrapper text-primary py-6 bg-white">
+        <div class="container section_container">
+            <div class="row">
+                <div class="col col-lg-8">
+                    <ul id="post-wrapper">
+                    </ul>
+                    <div class="comment-wrapper">
+                        <div class="comment-count my-4">
+                            <p class="fs-4 text-black fw-bold">3 Comments</p>
+                        </div>
+                        <div class="comment-content">
+                            <div class="comment d-flex mb-4">
+                                <img src="images/ads-img.png" class="object-fit-cover me-5 rounded-circle" alt=""
+                                    width="50px" height="50px">
+                                <div>
+                                    <div class="comment-box border p-3 rounded-4 d-flex">
+                                        <div>
+                                            <div
+                                                class="comment-box-header align-items-center d-flex flex-row justify-content-between fw-medium">
+                                                <div class="comment-author">
+                                                    <p class="text-black m-0">Joe Doe</p>
+                                                    <a href="#post-comment"
+                                                        class="text-secondary m-0 mt-1 text-decoration-none">Nov
+                                                        26,2021</a>
+                                                </div>
+                                            </div>
+                                            <div class="comment-box-body mt-3 text-black" style="max-width: 670px;">
+                                                <p>This is exactly what i was looking for, thank you so much for these
+                                                    tutorials</p>
+                                            </div>
+                                        </div>
+                                        <div style="width: 120px;">
+                                            <button class="btn btn-warning rounded-2 fs-6 p-2 px-3 fw-medium"
+                                                onclick="reply()" value="1">
+                                                <i class="fa fa-reply" aria-hidden="true"></i>
+                                                <span>REPLY</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="respond border rounded-4 mt-3 p-3 d-none" value="1"></div>
+                                </div>
+                            </div>
+                            <div class="comment d-flex mb-4">
+                                <img src="images/ads-img.png" class="object-fit-cover me-5 rounded-circle" alt=""
+                                    width="50px" height="50px">
+                                <div>
+                                    <div class="comment-box border p-3 rounded-4 d-flex">
+                                        <div>
+                                            <div
+                                                class="comment-box-header align-items-center d-flex flex-row justify-content-between fw-medium">
+                                                <div class="comment-author">
+                                                    <p class="text-black m-0">Arisu</p>
+                                                    <a href="#post-comment"
+                                                        class="text-secondary m-0 mt-1 text-decoration-none">Nov
+                                                        26,2021</a>
+                                                </div>
+                                            </div>
+                                            <div class="comment-box-body mt-3 text-black" style="max-width: 670px;">
+                                                <p>What a nice article. It keeps me reading more and more!</p>
+                                            </div>
+                                        </div>
+                                        <div style="width: 120px;">
+                                            <button class="btn btn-warning rounded-2 fs-6 p-2 px-3 fw-medium"
+                                                onclick="reply()" value="2">
+                                                <i class="fa fa-reply" aria-hidden="true"></i>
+                                                <span>REPLY</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="respond border rounded-4 mt-3 p-3 d-none" value="2"></div>
+                                </div>
+                            </div>
+                            <div class="comment d-flex mb-4">
+                                <img src="images/ads-img.png" class="object-fit-cover me-5 rounded-circle" alt=""
+                                    width="50px" height="50px">
+                                <div>
+                                    <div class="comment-box border p-3 rounded-4 d-flex">
+                                        <div>
+                                            <div
+                                                class="comment-box-header align-items-center d-flex flex-row justify-content-between fw-medium">
+                                                <div class="comment-author">
+                                                    <p class="text-black m-0">Harry</p>
+                                                    <a href="#post-comment"
+                                                        class="text-secondary m-0 mt-1 text-decoration-none">Oc
+                                                        12,2022</a>
+                                                </div>
+                                            </div>
+                                            <div class="comment-box-body mt-3 text-black" style="max-width: 670px;">
+                                                <p>It would be great to try this theme for my businesses It would be
+                                                    great to try this theme for my businessesIt would be great to try
+                                                    this theme for my businessesIt would be great to try this theme for
+                                                    my businesses</p>
+                                            </div>
+                                        </div>
+                                        <div style="width: 120px;">
+                                            <button class="btn btn-warning rounded-2 fs-6 p-2 px-3 fw-medium"
+                                                onclick="reply()" value="3">
+                                                <i class="fa fa-reply" aria-hidden="true"></i>
+                                                <span>REPLY</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="respond border rounded-4 mt-3 p-3 d-none" value="3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-comment" id="post-comment">
+                            <p class="text-black fs-3 fw-bold m-0">Leave a Reply</p>
+                            <p class="text-secondary">Your email address will not be published. Required fields are
+                                marked<span class="text-danger">*</span></p>
+                            <form action="" class="px-3">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <input type="text" class="form-control rounded-5 p-3 ps-4 bg-secondary-subtle"
+                                            placeholder="Your Name *" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text" class="form-control rounded-5 p-3 ps-4 bg-secondary-subtle"
+                                            placeholder="Email Address *" required>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text" class="form-control rounded-5 p-3 ps-4 bg-secondary-subtle"
+                                            placeholder="Your Website">
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col">
+                                        <textarea name="" id=""
+                                            class="form-control rounded-5 p-3 ps-4 bg-secondary-subtle" rows="5"
+                                            placeholder="Comment"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row my-3">
+                                    <div class="col">
+                                        <input type="checkbox" class="me-2"><span class="text-secondary">Save my name,
+                                            email, and website in this browser for the next time I comment.</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="reset" class="btn btn-warning fw-bold py-3">POST COMMENT<i
+                                                class="fa fa-play-circle ms-2" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4 d-none d-lg-block">
+                    <div class="widget-wrapper rounded-4 text-black">
+                        <div class="widget widget-searchbar">
+                            <form action="">
+                                <input type="search" class="rounded-5 ps-4 border-0" placeholder="Search..."
+                                    name="search">
+                                <button type="button" class="btn"><i class="fa fa-search"
+                                        aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                        <div class="widget widget-categories">
+                            <div class="widget-title mb-3">
+                                <span class="h3">Categories</span>
+                                <img src="images/footer_divide.png" alt="" style="max-width: 100%;">
+                            </div>
+                            <ul class="d-flex flex-column">
+                                <li class="cat-item mb-3 d-inline-block" onclick="filterCat('Company News')">
+                                    <a href="BlogClassic.html" class="d-flex flex-row justify-content-between">
+                                        <div>
+                                            <span><i
+                                                    class="fas fa-chevron-circle-right fa-solid text-primary"></i></span>
+                                            <span class="cat-name">Company News</span>
+                                        </div>
+                                        <span class="cat-count text-secondary" id="cat-count1"></span>
+                                    </a>
+                                </li>
+                                <li class="cat-item mb-3 d-inline-block" onclick="filterCat('Electronics')">
+                                    <a href="BlogClassic.html" class="d-flex flex-row justify-content-between">
+                                        <div>
+                                            <span><i
+                                                    class="fas fa-chevron-circle-right fa-solid text-primary"></i></span>
+                                            <span class="cat-name">Electronics</span>
+                                        </div>
+                                        <span class="cat-count text-secondary" id="cat-count2"></span>
+                                    </a>
+                                </li>
+                                <li class="cat-item mb-3 d-inline-block" onclick="filterCat('Lifestyle')">
+                                    <a href="BlogClassic.html" class="d-flex flex-row justify-content-between">
+                                        <div>
+                                            <span><i
+                                                    class="fas fa-chevron-circle-right fa-solid text-primary"></i></span>
+                                            <span class="cat-name">Lifestyle</span>
+                                        </div>
+                                        <span class="cat-count text-secondary" id="cat-count3"></span>
+                                    </a>
+                                </li>
+                                <li class="cat-item mb-3 d-inline-block" onclick="filterCat('Social Media')">
+                                    <a href="BlogClassic.html" class="d-flex flex-row justify-content-between">
+                                        <div>
+                                            <span><i
+                                                    class="fas fa-chevron-circle-right fa-solid text-primary"></i></span>
+                                            <span class="cat-name">Social Media</span>
+                                        </div>
+                                        <span class="cat-count text-secondary" id="cat-count4"></span>
+                                    </a>
+                                </li>
+                                <li class="cat-item mb-3 d-inline-block" onclick="filterCat('Tips & Tricks')">
+                                    <a href="BlogClassic.html" class="d-flex flex-row justify-content-between">
+                                        <div>
+                                            <span><i
+                                                    class="fas fa-chevron-circle-right fa-solid text-primary"></i></span>
+                                            <span class="cat-name">Tips & Tricks</span>
+                                        </div>
+                                        <span class="cat-count text-secondary" id="cat-count5"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="widget widget-recents_post">
+                            <div class="widget-title mb-3">
+                                <span class="h3">Recents Posts</span>
+                                <img src="images/footer_divide.png" alt="" style="max-width: 100%;">
+                            </div>
+                            <ul id="recents_post-list">
+                            </ul>
+                        </div>
+                        <div class="widget widget-tags">
+                            <div class="widget-title mb-3">
+                                <span class="h3">Tags</span>
+                                <img src="images/footer_divide.png" alt="" style="max-width: 100%;">
+                            </div>
+                            <div class="tags-wrapper">
+                                <a href="BlogClassic.html" onclick="filterTag('electronics')"
+                                    class="tag link-secondary d-inline-block text-decoration-none bg-white p-1 px-3 rounded-3 mb-2 me-2">electronics</a>
+                                <a href="BlogClassic.html" onclick="filterTag('envato')"
+                                    class="tag link-secondary d-inline-block text-decoration-none bg-white p-1 px-3 rounded-3 mb-2 me-2">envato</a>
+                                <a href="BlogClassic.html" onclick="filterTag('gadgets')"
+                                    class="tag link-secondary d-inline-block text-decoration-none bg-white p-1 px-3 rounded-3 mb-2 me-2">gadgets</a>
+                                <a href="BlogClassic.html" onclick="filterTag('game')"
+                                    class="tag link-secondary d-inline-block text-decoration-none bg-white p-1 px-3 rounded-3 mb-2 me-2">game</a>
+                                <a href="BlogClassic.html" onclick="filterTag('quality')"
+                                    class="tag link-secondary d-inline-block text-decoration-none bg-white p-1 px-3 rounded-3 mb-2 me-2">quality</a>
+                                <a href="BlogClassic.html" onclick="filterTag('store')"
+                                    class="tag link-secondary d-inline-block text-decoration-none bg-white p-1 px-3 rounded-3 mb-2 me-2">store</a>
+                                <a href="BlogClassic.html" onclick="filterTag('wifi')"
+                                    class="tag link-secondary d-inline-block text-decoration-none bg-white p-1 px-3 rounded-3 mb-2 me-2">wifi</a>
+                            </div>
+                        </div>
+                        <div class="widget widget-ads">
+                            <div class="ads-wrapper bg-primary rounded-4 p-4 px-5">
+                                <div class="discount fs-2 fw-bold mb-3">30% off</div>
+                                <div class="fw-bold mb-3">your favorite brands of pet food</div>
+                                <button class="btn btn-light text-uppercase py-3">Explore now <span><i
+                                            class="fa fa-play-circle ps-2" aria-hidden="true"></i></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Your code goes here -->
+    <!-- Your code goes here -->
+
+
+    <footer class="footer pt-7 pb-6 lg-text text-center text-md-start text-white">
+        <div class="container">
+            <div
+                class="d-flex flex-wrap flex-column flex-md-row gap-5 gap-md-0 justify-content-between align-items-center mb-5">
+                <img src="images/logo.svg" alt="" style="width: 100px;">
+                <div class="location d-flex gap-2">
+                    <span><i class="fa-regular fa-location-dot text-primary"></i></span>
+                    <p class="fw-bold m-0">48 West Temple Drive <br> Ashburn, VA 20147 </p>
+                </div>
+                <div class="open-time d-flex gap-2">
+                    <span><i class="fa-regular fa-clock text-primary"></i></span>
+                    <div>
+                        <p class="fw-bold m-0">Mon to Sun:</p>
+                        <p class="m-0">10:00 AM To 6:00 PM</p>
+                    </div>
+                </div>
+                <div class="location d-flex gap-2">
+                    <span><i class="fa-regular fa-envelope text-primary"></i></span>
+                    <div>
+                        <p class="fw-bold m-0">Email Us:</p>
+                        <p class="m-0">support@example.com</p>
+                    </div>
+                </div>
+                <p class="phone-number fw-bold text-primary fs-2 m-0">(844)-1800333556</p>
+            </div>
+            <img class="mb-5" src="images/footer_divide.png" alt="" style="max-width: 100%;">
+            <div class="row mb-7">
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <h4 class="fw-bold">Join our community & save $3.00 on wellness!</h4>
+                    </div>
+                    <div class="mb-3">
+                        <p class="text-white-50">We'll help you find the food that is right for your pet even if it
+                            isn't our own.</p>
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-light py-3 fw-bold text-uppercase">
+                            Sign up
+                            <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 2px;">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fas fa-play fa-stack-1x text-white"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-9 mt-5 mt-md-0">
+                    <div class="row gap-5 gap-md-0">
+                        <div class="offset-md-2 col-md-2">
+                            <div class="mb-4">
+                                <p class="fw-bold text-uppercase xl-text">Our Products</p>
+                            </div>
+                            <ul class="list-unstyled vstack gap-2">
+                                <li><a href="#" class="text-white-50 text-decoration-none">For Cats</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">For Dogs</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Challenger</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">FreeStyle for Cats</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">FreeStyle for Dogs</a></li>
+                            </ul>
+                        </div>
+                        <div class="offset-md-2 col-md-2">
+                            <div class="mb-3">
+                                <p class="fw-bold text-uppercase xl-text">Community</p>
+                            </div>
+                            <ul class="list-unstyled vstack gap-2">
+                                <li><a href="#" class="text-white-50 text-decoration-none">News & Stories</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Mix-It Recipes</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Our Story</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Retailer Asset Portal</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="offset-md-2 col-md-2">
+                            <div class="mb-3">
+                                <p class="fw-bold text-uppercase xl-text">Get in touch</p>
+                            </div>
+                            <ul class="list-unstyled vstack gap-2">
+                                <li><a href="#" class="text-white-50 text-decoration-none">Careers</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Contact us</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">FAQ</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Find a Retailer</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Policies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 d-flex flex-column flex-md-row">
+                    <p class="text-white-50">Copyright &copy; 2021 <span class="text-white">Gopet</span>. All rights
+                        reserved</p>
+                    <div class="ms-md-auto">
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x text-white"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fab fa-twitter fa-stack-1x text-white"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fab fa-instagram fa-stack-1x text-white"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fab fa-pinterest fa-stack-1x text-white"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/navbar-effect.js"></script>
+    <script>
+        document.addEventListener("scroll", () => {
+            const navbar = document.querySelector(".navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("navbar-scroll-effect");
+            } else {
+                navbar.classList.remove("navbar-scroll-effect");
+            }
+        })
+        // Your code goes here
+        //storage
+        var soLuongPost = parseInt(localStorage.getItem("soLuongPost"));
+        var storage = [];
+        for (var i = 0; i < soLuongPost; i++) {
+            storage[i] = (JSON.parse(localStorage.getItem(i)));
+        }
+        //load selected post
+        var selectedPost = JSON.parse(localStorage.getItem(localStorage.getItem("selectedPost")));
+        if (selectedPost == null) selectedPost = JSON.parse(localStorage.getItem("0"));
+        uploadPost();
+        function uploadPost() {
+            var list = document.getElementById("post-wrapper");
+            list.innerHTML =
+                `<div class="card rounded-4 border-0">
+        <img class="card-img-top rounded-4" src=${selectedPost.img} alt="Card image">
+        <div class="card-body px-0">
+            <div class="card-info my-4 d-flex flex-row align-items-center">
+                <a href="#" class="category text-decoration-none text-black bg-warning-subtle rounded-4 me-2 px-3 py-2">${selectedPost.cat}</a>
+                <div onclick="filterAuthor('${selectedPost.author}')" class="m-0 me-2 p-0">
+                                        <a href="BlogClassic.html" class="author text-decoration-none text-secondary">
+                                            <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
+                                            ${selectedPost.author}
+                                        </a>
+                                    </div>
+                <a href="#" class="time text-decoration-none text-secondary">
+                    <span class="me-2"><i class="fas fa-calendar-alt fa-solid text-primary"></i></span>
+                    ${selectedPost.time}
+                </a>
+            </div>
+            <a href="#" class="card-title text-decoration-none fs-3 fw-bold" >${selectedPost.title}</a>
+            <p class="card-text text-secondary mt-4 mb-5">${selectedPost.content}</p>
+            <div class="tag">
+                <span class="text-black">Tags:</span>
+                <span class="text-secondary text-decoration-none">${selectedPost.tags}</span>
+            </div>
+        </div>
+        <div class="card-footer border-top border-bottom d-flex py-4 bg-white" id="card-footer">
+        </div>    
+    </div>`
+            var cardFooter = document.getElementById("card-footer");
+            if (JSON.parse(localStorage.getItem("selectedPost")) == "0") {
+                var prevPost = JSON.parse(localStorage.getItem(parseInt(localStorage.getItem("selectedPost")) + 1));
+                cardFooter.innerHTML =
+                    `<div value="${parseInt(localStorage.getItem("selectedPost")) + 1}" class="col-6 p-0 m-0" onclick="getSelectedPost()">
+            <a href="blog-detail.html" class="d-flex flex-row align-items-center p-0 m-0  text-decoration-none">
+                <img src=${prevPost.img} alt="" width="60px" height="60px" class="object-fit-cover me-3">
+                <div>
+                    <p class="text-secondary p-0 m-0">PREV</p>
+                    <p class="font-weight-3 p-0 m-0">${prevPost.title}</p>
+                </div>
+            </a>
+        </div>`;
+            }
+            else if (parseInt(JSON.parse(localStorage.getItem("selectedPost"))) == parseInt(JSON.parse(localStorage.getItem("soLuongPost")) - 1)) {
+                var nextPost = JSON.parse(localStorage.getItem(parseInt(localStorage.getItem("selectedPost")) - 1));
+                cardFooter.innerHTML =
+                    `<div value="${parseInt(localStorage.getItem("selectedPost")) - 1}" class="col-12 p-0- m-0 d-flex justify-content-end" onclick="getSelectedPost()">
+            <a href="blog-detail.html" class="d-flex flex-row align-items-center p-0 m-0  text-decoration-none">
+                <div>
+                    <p class="text-secondary p-0 m-0 text-end">NEXT</p>
+                    <p class="font-weight-3 p-0 m-0">${nextPost.title}</p>
+                </div>
+                <img src=${nextPost.img} alt="" width="60px" height="60px" class="object-fit-cover ms-3">
+            </a>
+        </div>`;
+            }
+            else {
+                var prevPost = JSON.parse(localStorage.getItem(parseInt(localStorage.getItem("selectedPost")) + 1));
+                var nextPost = JSON.parse(localStorage.getItem(parseInt(localStorage.getItem("selectedPost")) - 1));
+                cardFooter.innerHTML =
+                    `<div value="${parseInt(localStorage.getItem("selectedPost")) + 1}" class="col-6 p-0 m-0" onclick="getSelectedPost()">
+            <a href="blog-detail.html" class="d-flex flex-row p-0 m-0 pe-2 text-decoration-none">
+                <img src=${prevPost.img} alt="" width="60px" height="60px" class="object-fit-cover me-3">
+                <div>
+                    <p class="text-secondary p-0 m-0">PREV</p>
+                    <p class="font-weight-3 p-0 m-0">${prevPost.title}</p>
+                </div>
+            </a>
+        </div>
+        <div value="${parseInt(localStorage.getItem("selectedPost")) - 1}" class="col-6 p-0- m-0 d-flex justify-content-end" onclick="getSelectedPost()">
+            <a href="blog-detail.html" class="d-flex flex-row p-0 m-0 ps-2 text-decoration-none">
+                <div>
+                    <p class="text-secondary p-0 m-0 text-end">NEXT</p>
+                    <p class="font-weight-3 p-0 m-0">${nextPost.title}</p>
+                </div>
+                <img src=${nextPost.img} alt="" width="60px" height="60px" class="object-fit-cover ms-3">
+            </a>
+        </div>`;
+            }
+        }
+        //count post by cate
+        function catCount(cat, catCountId) {
+            var count = 0;
+            for (var i = 0; i < storage.length; i++) {
+                if (storage[i].cat == cat) count++;
+            }
+            document.getElementById(catCountId).innerText = `(${count})`;
+        }
+        catCount("Company News", "cat-count1");
+        catCount("Electronics", "cat-count2");
+        catCount("Lifestyle", "cat-count3");
+        catCount("Social Media", "cat-count4");
+        catCount("Tips & Tricks", "cat-count5");
+        //recent post on widget
+        var numberRecentPost = parseInt(localStorage.getItem("soLuongPost")) > 3 ? 3 : parseInt(localStorage.getItem("soLuongPost"));
+        for (var i = 0; i < numberRecentPost; i++) {
+            var list = document.getElementById("recents_post-list");
+            var li = document.createElement("li");
+            var post = JSON.parse(localStorage.getItem(i));
+            li.innerHTML =
+                `<a href="blog-detail.html">
+        <img src=${post.img} alt="">
+        <span class="recents_post-title">${post.title}</span>
+    </a>`
+            li.classList.add("recents_post-item");
+            li.value = i;
+            list.appendChild(li);
+        }
+        var recents_post = document.getElementsByClassName("recents_post-item");
+        for (var i = 0; i < recents_post.length; i++) {
+            recents_post[i].addEventListener("click", event => {
+                getSelectedPost();
+            })
+        }
+        function getSelectedPost() {
+            localStorage.setItem("selectedPost", event.currentTarget.getAttribute("value"));
+        }
+        //filter
+        function filterCat(cat) {
+            localStorage.setItem("filterCatSinglePost", cat);
+        }
+        function filterAuthor(author) {
+            localStorage.setItem("filterAuthorSinglePost", author);
+        }
+        function filterTag(tag) {
+            localStorage.setItem("filterTagSinglePost", tag);
+        }
+        //reply
+        function reply() {
+            var respondList = document.getElementsByClassName("respond");
+            for (i = 0; i < respondList.length; i++) {
+                respondList[i].innerHTML = "";
+                respondList[i].classList.remove("d-block");
+                respondList[i].classList.add("d-none");
+                if (event.currentTarget.value == respondList[i].getAttribute("value")) {
+                    respondList[i].classList.add("d-block");
+                    respondList[i].classList.remove("d-none");
+                    respondList[i].innerHTML =
+                        `
+            <div>
+                <p class="text-black fs-3 fw-bold m-0 d-inline-block">Reply</p>
+                <button type="button" onclick="{this.parentNode.parentNode.classList.add('d-none');document.getElementById('post-comment').classList.remove('d-none');}" class="float-end rounded-circle"><i class="fa fa-close" aria-hidden="true"></i></button>
+            </div>
+            <p class="text-secondary">Your email address will not be published. Required fields are marked<span class="text-danger">*</span></p>
+            <form action="" class="px-3">
+                <div class="row">
+                    <div class="col-4">
+                        <input type="text" class="form-control rounded-5 p-3 ps-4 bg-secondary-subtle" placeholder="Your Name *" required>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control rounded-5 p-3 ps-4 bg-secondary-subtle" placeholder="Email Address *" required>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control rounded-5 p-3 ps-4 bg-secondary-subtle" placeholder="Your Website">
+                    </div> 
+                </div> 
+                <div class="row mt-4">
+                    <div class="col">
+                        <textarea name="" id="" class="form-control rounded-5 p-3 ps-4 bg-secondary-subtle" rows="5" placeholder="Comment"></textarea>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col">
+                        <input type="checkbox" class="me-2"><span class="text-secondary">Save my name, email, and website in this browser for the next time I comment.</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button type="reset" class="btn btn-warning fw-bold py-3">POST COMMENT<i class="fa fa-play-circle ms-2" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </form>`;
+                }
+            }
+            document.getElementById("post-comment").classList.add("d-none");
+        }
+        function closeRespond() {
+        }
+    </script>
+    <script src="js/data-products.js"></script>
+    <script src="js/shopping-cart.js"></script>
+</body>
+
+</html>
