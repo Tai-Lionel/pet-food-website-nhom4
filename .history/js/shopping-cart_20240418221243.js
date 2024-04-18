@@ -7,7 +7,7 @@ let storageCartValue = JSON.parse(listCodeCart) || [];
 var storageQtyCart = "ListQtyCart";
 let listCodeQtyCart = localStorage.getItem(storageQtyCart);
 let storageQtyCartValue = JSON.parse(listCodeQtyCart) || [];
-const dataProductAll = productList;
+const dataProductAll = productList
 
 // favorite
 // event listener of hearts
@@ -43,7 +43,7 @@ function cartCount() {
 }
 cartCount();
 
-// event listener of "add to cart"
+// event listener of "add to cart" 
 let quantityOfCurrentProduct = document.createElement("span");
 function assignCartEvent() {
     const carts = document.querySelectorAll(".cart-in-product");
@@ -52,35 +52,18 @@ function assignCartEvent() {
             e.currentTarget.classList.toggle("cart-selected");
             const codeSP = e.currentTarget.getAttribute("data-codeProduct");
             quantityOfCurrentProduct.setAttribute("data-CodeSP", `${codeSP}`);
-            quantityOfCurrentProduct.textContent = `${
-                e.target.previousElementSibling?.tagName.toLowerCase() ===
-                "input"
-                    ? e.target.previousElementSibling.value
-                    : 1
-            }`;
+            quantityOfCurrentProduct.textContent = `${e.target.previousElementSibling?.tagName.toLowerCase() === "input" ? e.target.previousElementSibling.value : 1}`;
             const qtyStorage = quantityOfCurrentProduct.textContent;
             if (e.currentTarget.classList.contains("cart-selected")) {
                 storageCartValue.push(codeSP);
                 storageQtyCartValue.push(qtyStorage);
-                localStorage.setItem(
-                    storageCart,
-                    JSON.stringify(storageCartValue)
-                );
-                localStorage.setItem(
-                    storageQtyCart,
-                    JSON.stringify(storageQtyCartValue)
-                );
+                localStorage.setItem(storageCart, JSON.stringify(storageCartValue));
+                localStorage.setItem(storageQtyCart, JSON.stringify(storageQtyCartValue));
             } else {
                 storageCartValue.splice(storageCartValue.indexOf(codeSP), 1);
-                localStorage.setItem(
-                    storageCart,
-                    JSON.stringify(storageCartValue)
-                );
+                localStorage.setItem(storageCart, JSON.stringify(storageCartValue));
                 storageQtyCartValue.splice(storageCartValue.indexOf(codeSP), 1);
-                localStorage.setItem(
-                    storageQtyCart,
-                    JSON.stringify(storageQtyCartValue)
-                );
+                localStorage.setItem(storageQtyCart, JSON.stringify(storageQtyCartValue));
             }
             cartCount();
             // var bsOffcanvas = new bootstrap.Offcanvas(document.getElementById('shoppingCartOffcanvas'))
@@ -118,45 +101,29 @@ function renderCart() {
             discount = false;
         }
         return `
-              
-                <div class=" d-flex align-items-center gap-5 p-5 border border-subtle cart-show-fix " style="position:relative" data-codeSPCommon=${
-                    item.code
-                }>
-                <div class="">
-                    <img src=${item.imgUrl} style="width:100px" alt=${
-            item.name
-        }/>
-                </div>
-                <div class=" d-flex flex-column gap-3">
-                    <a class="list-products__item__name" style="display: block; font-size: 16px; line-height: 1.3; margin-top:10px;">
-                        ${item.name}
-                    </a>
-                    <div class="product__group-prices">
-                        <p class="w-100 ${
-                            discount ? " real__price" : "normal__price"
-                        }">$${item.price.toFixed(2)}</p>
-                        <p class="w-100 sale__price ${
-                            discount ? "" : " d-none"
-                        }">$${(
-            (item.price * (100 - item.discount)) /
-            100
-        ).toFixed(2)}</p>
-
+                <div class=" d-flex align-items-center gap-5 p-5 border border-subtle cart-show-fix " style="position:relative" data-codeSPCommon=${item.code}>
+                    <div class="">
+                        <img src=${item.imgUrl} style="width:100px" alt=${item.name}/>
                     </div>
-                    <div>Quantity: ${
-                        storageQtyCartValue[storageCartValue.indexOf(item.code)]
-                    }</div>
-                </div>
-                <div class="cart-remove"
-                    style="cursor:pointer;position:absolute;color:gray;z-index:99;top:10px;right:10px;height:20px;width:20px"><svg
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                        class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </div>
-            </div>
-                
-               `;
+                    <div class=" d-flex flex-column gap-3">
+                        <a class="list-products__item__name" style="display: block; font-size: 16px; line-height: 1.3; margin-top:10px;">
+                            ${item.name}
+                        </a>
+                        <div class="product__group-prices">
+                            <p class="w-100 ${discount ? " real__price" : "normal__price"}">$${item.price.toFixed(2)}</p>
+                            <p class="w-100 sale__price ${discount ? "" : " d-none"}">$${((item.price * (100 - item.discount)) / 100).toFixed(2)}</p>
+
+                        </div>
+                        <div>Quantity: ${storageQtyCartValue[storageCartValue.indexOf(item.code)]}</div>
+                    </div>
+                    <div class="cart-remove"
+                        style="cursor:pointer;position:absolute;color:gray;z-index:99;top:10px;right:10px;height:20px;width:20px"><svg
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                </div>`;
     });
     if (storageCartValue.length == 0) {
         cartShowBody.innerHTML = `<div> No products in the cart</div>`;
@@ -168,7 +135,7 @@ function renderCart() {
                     <div class="d-flex align-items-center mt-5 justify-content-between w-100 p-5 car-total-price">
                         <div class="total" style="color:black;font-weight:600">Total : <span class="total-price">${getTotalPriceInCart()}</span></div>
                         <button class="bill" style="border: none; outline: none; padding: 10px; background-color: green; color: white; font-weight: 600; border-radius: 20px; ">
-                        BUY ALL
+                            BUY ALL
                         </button>
                     </div>
                 `;
@@ -192,13 +159,11 @@ function assignRemoveCart() {
             temp.splice(temp.indexOf(codeRemove), 1);
             localStorage.setItem("ListCart", JSON.stringify(temp));
             const cartItems = document.querySelectorAll(".cart-show-fix");
-            let cartRemove;
             cartItems.forEach((item) => {
                 if (item.getAttribute("data-codespcommon") == codeRemove) {
-                    cartRemove = item;
+                    item.classList.add("d-none");
                 }
             });
-            item.parentNode.removeChild(item);
             document.querySelector(".cart-count").textContent = temp.length;
             storageQtyCartValue.splice(storageCartValue.indexOf(codeRemove), 1);
             localStorage.setItem(
@@ -227,7 +192,6 @@ function assignRemoveCart() {
         })
     );
 }
-
 cartShow.forEach((item) =>
     item.addEventListener("click", function (e) {
         listCodeCart = localStorage.getItem(storageCart);
@@ -236,12 +200,10 @@ cartShow.forEach((item) =>
     })
 );
 function assignDetails() {
-    document.querySelectorAll(".product-details-link").forEach((link) => {
-        link.addEventListener("click", (e) => {
-            localStorage.setItem(
-                "ItemDetailSelected",
-                JSON.stringify(e.target.dataset.productlink)
-            );
-        });
-    });
+    document.querySelectorAll(".product-details-link").forEach(link => {
+        link.addEventListener("click", e => {
+            localStorage.setItem("ItemDetailSelected", JSON.stringify(e.target.dataset.productlink))
+        })
+    })
 }
+

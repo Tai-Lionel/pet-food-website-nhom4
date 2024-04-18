@@ -38,8 +38,8 @@ rangeValueStart.addEventListener("mousedown", function (e) {
         }
         temp =
             (posX / width) *
-                (Math.max(...dataProductAll.map((item) => item.price)) -
-                    Math.min(...dataProductAll.map((item) => item.price))) +
+            (Math.max(...dataProductAll.map((item) => item.price)) -
+                Math.min(...dataProductAll.map((item) => item.price))) +
             Math.min(...dataProductAll.map((item) => item.price));
         priceStart.textContent = temp.toFixed(2);
         rangeValueStart.style.left = posX + "px";
@@ -73,8 +73,8 @@ rangeValueEnd.addEventListener("mousedown", function (e) {
         }
         temp =
             (posX / width) *
-                (Math.max(...dataProductAll.map((item) => item.price)) -
-                    Math.min(...dataProductAll.map((item) => item.price))) +
+            (Math.max(...dataProductAll.map((item) => item.price)) -
+                Math.min(...dataProductAll.map((item) => item.price))) +
             Math.min(...dataProductAll.map((item) => item.price));
         priceEnd.textContent = temp.toFixed(2);
         rangeValueEnd.style.left = posX + "px";
@@ -91,9 +91,7 @@ rangeValueEnd.addEventListener("mousedown", function (e) {
 // shop
 const categoryDropdown = document.querySelector(".category__dropdown");
 categoryDropdown.addEventListener("click", function (e) {
-    const categoryDropdownIcon = document.querySelector(
-        ".category__dropdown-icon"
-    );
+    const categoryDropdownIcon = document.querySelector(".category__dropdown-icon");
     categoryDropdownIcon.classList.toggle("fa-plus");
     categoryDropdownIcon.classList.toggle("fa-minus");
 });
@@ -187,9 +185,7 @@ function handleCategories() {
                         `${e.target.textContent.trim()}`
                     );
                 });
-                dataProductCurrent = dataFilterCategories.filter(function (
-                    item
-                ) {
+                dataProductCurrent = dataFilterCategories.filter(function (item) {
                     return dataFilterBrands.includes(item);
                 });
 
@@ -206,9 +202,7 @@ function handleCategories() {
 handleCategories();
 // brand
 const brandsValue = document.querySelectorAll(".product__brand__text");
-const brandsIconSelect = document.querySelectorAll(
-    ".product__brand__icon-select"
-);
+const brandsIconSelect = document.querySelectorAll(".product__brand__icon-select");
 function handleBrands() {
     return brandsValue.forEach((item) => {
         item.addEventListener("click", function (e) {
@@ -244,7 +238,9 @@ function handleBrands() {
                 dataFilterBrands = dataProductAll.filter(function (item) {
                     return item.brand === `${e.target.textContent.trim()}`;
                 });
-                dataProductCurrent = dataFilterBrands.filter(function (item) {
+                dataProductCurrent = dataFilterBrands.filter(function (
+                    item
+                ) {
                     return dataFilterCategories.includes(item);
                 });
 
@@ -275,51 +271,24 @@ function renderViewTable(data) {
         if (index < currentPage * 12 && index >= (currentPage - 1) * 12) {
             return `
                     <div class="products-item position-relative">
-                        <span class="product-item-discount ${
-                            discount ? "" : " d-none"
-                        }">-${item.discount}%</span>
-                        <img src=${item.imgUrl} alt=${
-                item.name
-            } class="product-item-img" />
+                        <span class="product-item-discount ${discount ? "" : " d-none"}">-${item.discount}%</span>
+                        <img src=${item.imgUrl} alt=${item.name} class="product-item-img" />
                         <p class="product-item-name">${item.name}</p>
                         <div class="product__group-prices">
-                            <p class=${
-                                discount ? "real__price" : "normal__price"
-                            }>$${item.price.toFixed(2)}</p>
-                            <p class="sale__price ${
-                                discount ? "" : " d-none"
-                            }">$${(
-                (item.price * (100 - item.discount)) /
-                100
-            ).toFixed(2)}</p>
+                            <p class=${discount ? "real__price" : "normal__price"}>$${item.price.toFixed(2)}</p>
+                            <p class="sale__price ${discount ? "" : " d-none"}">$${((item.price * (100 - item.discount)) / 100).toFixed(2)}</p>
                         </div>
                         <div class="product__actions d-flex flex-column align-items-center justify-content-between gap-2 position-absolute p-3 top-0 start-0 w-100 h-100" style="background-color: rgba(256, 256, 256, 0.5);z-index:-10;transform:translateY(80px);border:3px solid rgb(255, 174, 0);opacity:0;visibility:hidden;border-radius:30px">
                             <div class="product__actions__group-1 d-flex gap-3 position-relative" style="z-index:999">
-                                <a href="./shop-details.html" class="fa-solid fa-link product-details-link" data-productLink=${
-                                    item.code
-                                }></a>
-                                <i class="fa-regular fa-heart ${
-                                    (storageFavoriteValue || []).includes(
-                                        item.code
-                                    )
-                                        ? " heart-selected"
-                                        : ""
-                                }" data-codeProduct=${
-                item.code
-            }></i><i class="fa-solid fa-repeat"></i>
+                                <a href="./shop-details.html" class="fa-solid fa-link product-details-link" data-productLink=${item.code}></a>
+                                <i class="fa-regular fa-heart ${(storageFavoriteValue || []).includes(item.code) ? " heart-selected" : ""}" data-codeProduct=${item.code}></i><i class="fa-solid fa-repeat"></i>
                             </div>
-                            <div data-codeProduct=${
-                                item.code
-                            } class="product__actions__group-2 d-flex align-items-center cart-in-product ${
-                (storageCartValue || []).includes(item.code)
-                    ? " cart-selected"
-                    : ""
-            }" style="color: white;max-width:100%; background-color: rgb(255, 174, 0);padding:5px 10px; border-radius:30px">
+                            <div data-codeProduct=${item.code} class="product__actions__group-2 d-flex align-items-center cart-in-product ${(storageCartValue || []).includes(item.code) ? " cart-selected" : ""}" style="color: white;max-width:100%; background-color: rgb(255, 174, 0);padding:5px 10px; border-radius:30px">
                                 <span>ADD TO CART</span>
                                 <i class="fa-solid fa-cart-shopping text-black border-0 bg-transparent"></i>
                             </div>
                         </div>
-                    </div>`;
+                    </div>`
         }
     });
     listProductsBody.innerHTML = listProductContent.join("");
@@ -350,34 +319,13 @@ function renderViewList(data) {
                                 ${item.desc}
                             </p>
                             <div class="product__group-prices">
-                                <p class=${
-                                    discount ? "real__price" : "normal__price"
-                                }>$${item.price.toFixed(2)}</p>
-                                <p class="sale__price ${
-                                    discount ? "" : " d-none"
-                                }">$${(
-                (item.price * (100 - item.discount)) /
-                100
-            ).toFixed(2)}</p>
+                                <p class=${discount ? "real__price" : "normal__price"}>$${item.price.toFixed(2)}</p>
+                                <p class="sale__price ${discount ? "" : " d-none"}">$${((item.price * (100 - item.discount)) / 100).toFixed(2)}</p>
                             </div>
                             <div class="product__actions d-flex gap-2">
-                                <a href="./shop-details.html" class="fa-solid fa-link product-details-link" data-productLink=${
-                                    item.code
-                                }></a>
-                                <i class="fa-regular fa-heart  ${
-                                    (storageFavoriteValue || []).includes(
-                                        item.code
-                                    )
-                                        ? " heart-selected"
-                                        : ""
-                                }" data-codeProduct=${
-                item.code
-            }></i><i class="fa-solid fa-repeat"></i>
-                                <i class="fa-solid fa-cart-shopping  cart-in-product ${
-                                    (storageCartValue || []).includes(item.code)
-                                        ? " cart-selected"
-                                        : ""
-                                }" data-codeProduct=${item.code}></i>
+                                <a href="./shop-details.html" class="fa-solid fa-link product-details-link" data-productLink=${item.code}></a>
+                                <i class="fa-regular fa-heart  ${(storageFavoriteValue || []).includes(item.code) ? " heart-selected" : ""}" data-codeProduct=${item.code}></i><i class="fa-solid fa-repeat"></i>
+                                <i class="fa-solid fa-cart-shopping  cart-in-product ${(storageCartValue || []).includes(item.code) ? " cart-selected" : ""}" data-codeProduct=${item.code}></i>
                             </div>
                         </div>
                     </div>`;
@@ -392,9 +340,7 @@ function handleRenderProductsBody(data) {
     } else {
         if (listProductsBody.classList.contains("list-products__body-table")) {
             return renderViewTable(data);
-        } else if (
-            listProductsBody.classList.contains("list-products__body-list")
-        ) {
+        } else if (listProductsBody.classList.contains("list-products__body-list")) {
             return renderViewList(data);
         }
     }
@@ -407,24 +353,16 @@ function renderPagination(data) {
         pagination.innerHTML = temp;
     } else {
         for (i = 1; i <= numberOfPages; i++) {
-            temp += `<div class="pagination-num ${
-                currentPage == i ? "pagination-num--active" : ""
-            }">${i}</div>`;
+            temp += `<div class="pagination-num ${currentPage == i ? "pagination-num--active" : ""}">${i}</div>`;
         }
 
         pagination.innerHTML = `
-                <div class="pagination-pre  ${
-                    currentPage == 1 ? " d-none" : ""
-                } ${currentPage > 1 ? "d-block" : ""}">
+                <div class="pagination-pre  ${currentPage == 1 ? " d-none" : ""} ${currentPage > 1 ? "d-block" : ""}">
                     <i class="fa-solid fa-chevron-left"></i>
                     PRE
                 </div>
                 ${temp}
-                <div class="pagination-next ${
-                    numberOfPages > 1 && currentPage !== numberOfPages
-                        ? ""
-                        : " d-none"
-                }"> 
+                <div class="pagination-next ${numberOfPages > 1 && currentPage !== numberOfPages ? "" : " d-none"}"> 
                     NEXT 
                     <i class="fa-solid fa-chevron-right"></i>
                 </div>`;
@@ -432,7 +370,7 @@ function renderPagination(data) {
 }
 // Định nghĩa hàm để gán sự kiện cho các nút pagination
 function assignPaginationEvent(data) {
-    const paginationNums = [...document.querySelectorAll(".pagination-num")];
+    const paginationNums = [...document.querySelectorAll(".pagination-num"),];
     paginationNums.forEach((item) => {
         item.addEventListener("click", function (e) {
             paginationNums.forEach((item) =>
@@ -599,14 +537,7 @@ function assignHeartEventInWishList(wishList) {
             }
             listCodeFavorite = localStorage.getItem(storageFavorite);
             storageFavoriteValue = JSON.parse(listCodeFavorite) || [];
-            if (wishList.classList.contains("wishlist--active")) {
-                e.target.parentNode.parentNode.parentNode.parentNode.removeChild(
-                    e.target.parentNode.parentNode.parentNode
-                );
-                if (storageFavoriteValue.length === 0) {
-                    listProductsBody.innerHTML = `<div style="text-align:center;font-size: 20px;">No products found</div>`;
-                }
-            }
+            renderWishList(wishList);
         });
     });
 }
