@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="font-size: 14px;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="font-size: 14px;">
         <div class="container-fluid">
 
             <!-- the hamburger -->
@@ -98,7 +98,7 @@
                 </ul>
                 <ul class="navbar-nav navbar-nav-2 ms-auto mb-2 mb-lg-0 fw-bold d-flex">
                     <li class="nav-item">
-                        <a class="nav-link p-0" href="store-locator.html">
+                        <a class="nav-link p-0" href="#">
                             <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
                             Store Locator
                         </a>
@@ -224,87 +224,12 @@
         </div>
     </div>
 
-    <section class="breadcrumb-wrapper bg-black text-white pt-8 pb-8">
-        <div class="container">
-            <div class="row">
-                <div class="d-flex flex-column justify-content-center align-items-center gap-2">
-                    <!-- Change into the name of the page -->
-                    <h2 class="fw-bold display-2">Register</h2>
-                    <div class="d-flex gap-2 lg-text">
-                        <a href="home.html" class="m-0 text-decoration-none link-light">Home Page</a>
-                        <span class="text-primary">
-                            <i class="fas fa-circle" style="transform: scale(0.5);"></i>
-                        </span>
-                        <!-- Change into the name of the page -->
-                        <p class="m-0 text-white-50">Register</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="main py-5">
-        <div class="container">
-            <div class="row">
-                <div class="offset-md-3 col-md-6">
-                    <h2 class="text-center mb-4">Create account</h2>
-                    <form id="register-form" class="vstack gap-4">
-                        <div class="row gy-4">
-                            <div class="col-md-6">
-                                <label for="firstName" class="form-label">First name:</label>
-                                <input type="text" name="firstName" id="firstName" class="form-control">
-                                <small class="error-message"></small>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="lastName" class="form-label">Last name:</label>
-                                <input type="text" name="lastName" id="lastName" class="form-control">
-                                <small class="error-message"></small>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="gender" class="form-label">Gender:</label>
-                            <div class="d-flex gap-3">
-                                <div class="form-check">
-                                    <input type="radio" name="gender" id="male" class="form-check-input" value="male"
-                                        checked>
-                                    <label for="male" class="form-check-label">Male</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="radio" name="gender" id="female" class="form-check-input"
-                                        value="female">
-                                    <label for="female" class="form-check-label">Female</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="dob" class="form-label">Date of birth:</label>
-                            <input type="date" name="dob" id="dob" class="form-control">
-                            <small class="error-message"></small>
-                        </div>
-                        <div>
-                            <label for="email" class="form-label">Email:</label>
-                            <input type="email" name="email" id="email" class="form-control">
-                            <small class="error-message"></small>
-                        </div>
-                        <div>
-                            <label for="password" class="form-label">Password:</label>
-                            <input type="password" name="password" id="password" class="form-control">
-                            <small class="error-message"></small>
-                        </div>
-                        <div>
-                            <label for="confirmedPassword" class="form-label">Confirm password:</label>
-                            <input type="password" name="confirmedPassword" id="confirmedPassword" class="form-control">
-                            <small class="error-message"></small>
-                        </div>
-                        <p>
-                            This site is protected by reCAPTCHA and Google <a href="#"
-                                class="text-decoration-none">Privacy Policy</a> and <a href="#"
-                                class="text-decoration-none">Terms of Services</a> apply
-                        </p>
-                        <button class="btn btn-success btn-lg text-white rounded-0">Register</button>
-                    </form>
-                </div>
-            </div>
+    <section>
+        <div style="height: 100dvh; width: 100%;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31350.23341162504!2d106.63715104718035!3d10.828204066701701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174deb3ef536f31%3A0x8b7bb8b7c956157b!2sIndustrial%20University%20of%20Ho%20Chi%20Minh%20City!5e0!3m2!1sen!2s!4v1713449988281!5m2!1sen!2s"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
@@ -430,7 +355,6 @@
     </footer>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/navbar-effect.js"></script>
     <script src="js/data-products.js"></script>
     <script src="js/shopping-cart.js"></script>
     <script src="js/show-acccount.js"></script>

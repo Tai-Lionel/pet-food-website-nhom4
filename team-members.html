@@ -104,47 +104,12 @@
         </ul>
         <ul class="navbar-nav navbar-nav-2 ms-auto mb-2 mb-lg-0 fw-bold d-flex">
           <li class="nav-item">
-            <a class="nav-link p-0" href="#">
+            <a class="nav-link p-0" href="store-locator.html">
               <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
               Store Locator
             </a>
           </li>
-          <li class="nav-item dropdown dropstart">
-            <a class="nav-link p-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="#">
-              <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
-              Sign In
-            </a>
-            <div class="dropdown-menu p-0">
-              <div class="sign-in border border-primary px-4 pt-5 pb-3 bg-light text-black" style="min-width: 350px;">
-                <div class="d-flex justify-content-between">
-                  <h3>Sign in</h3>
-                  <a href="#" class="text-primary">Create an Account</a>
-                </div>
-                <form class="mb-3">
-                  <div class="mb-3">
-                    <label for="username" class="form-label">Username or email <span
-                        class="text-danger">*</span></label>
-                    <input class="form-control text-black" type="text" id="username" placeholder="Username">
-                  </div>
-                  <div class="mb-3">
-                    <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
-                    <input class="form-control text-black" type="text" id="password" placeholder="Password">
-                  </div>
-                  <div class="d-grid">
-                    <button class="btn btn-primary fw-bold text-uppercase">
-                      Login
-                      <span class="fa-stack sm-text ms-1" style="margin-bottom: 1px;">
-                        <i class="fas fa-circle fa-stack-2x text-black"></i>
-                        <i class="fas fa-play fa-stack-1x text-primary"></i>
-                      </span>
-                    </button>
-                  </div>
-                </form>
-                <div class="text-end">
-                  <p class="text-primary">Lost your password?</p>
-                </div>
-              </div>
-            </div>
+          <li class="nav-item dropdown dropstart account">
           </li>
           <li class="nav-item">
             <a class="nav-link p-0" href="#" data-bs-toggle="offcanvas" data-bs-target="#shoppingCartOffcanvas">
@@ -277,7 +242,7 @@
               <i class="fas fa-circle" style="transform: scale(0.5);"></i>
             </span>
             <!-- Change into the name of the page -->
-            <p class="m-0 text-white-50">Change me</p>
+            <p class="m-0 text-white-50">Team members</p>
           </div>
         </div>
       </div>
@@ -296,7 +261,8 @@
               <img src="images/hinh-1.jpg" alt="">
             </div>
             <div class="card-body p-0 pt-4">
-              <h5 class="card-name">Đào Thị Mỹ Linh</h5>
+              <h5 class="card-name">
+                Đào Thị Mỹ Linh</h5>
               <p class="card-text">22645651</p>
             </div>
             <ul class="social m-0 p-0 ">
@@ -546,10 +512,12 @@
     </div>
   </footer>
 
+  <script src="js/jquery.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/navbar-effect.js"></script>
   <script src="js/data-products.js"></script>
   <script src="js/shopping-cart.js"></script>
+  <script src="js/show-acccount.js"></script>
 </body>
 
 </html>

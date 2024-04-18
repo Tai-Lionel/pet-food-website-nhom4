@@ -38,7 +38,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top sm-txt">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="font-size: 14px">
         <div class="container-fluid">
             <!-- the hamburger -->
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-on-mobile">
@@ -113,54 +113,12 @@
                 </ul>
                 <ul class="mb-2 navbar-nav navbar-nav-2 ms-auto mb-lg-0 fw-bold d-flex">
                     <li class="nav-item">
-                        <a class="p-0 nav-link" href="#">
+                        <a class="p-0 nav-link" href="store-locator.html">
                             <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
                             Store Locator
                         </a>
                     </li>
-                    <li class="nav-item dropdown dropstart">
-                        <a class="p-0 nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
-                            href="#">
-                            <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
-                            Sign In
-                        </a>
-                        <div class="p-0 dropdown-menu">
-                            <div class="px-4 pt-5 pb-3 text-black border sign-in border-primary bg-light"
-                                style="min-width: 350px">
-                                <div class="d-flex justify-content-between">
-                                    <h3>Sign in</h3>
-                                    <a href="#" class="text-primary">Create an Account</a>
-                                </div>
-                                <form class="mb-3">
-                                    <div class="mb-3">
-                                        <label for="username" class="form-label">Username or email
-                                            <span class="text-danger">*</span></label>
-                                        <input class="text-black form-control" type="text" id="username"
-                                            placeholder="Username" />
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="password" class="form-label">Password
-                                            <span class="text-danger">*</span></label>
-                                        <input class="text-black form-control" type="text" id="password"
-                                            placeholder="Password" />
-                                    </div>
-                                    <div class="d-grid">
-                                        <button class="btn btn-primary fw-bold text-uppercase">
-                                            Login
-                                            <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 1px">
-                                                <i class="text-black fas fa-circle fa-stack-2x"></i>
-                                                <i class="fas fa-play fa-stack-1x text-primary"></i>
-                                            </span>
-                                        </button>
-                                    </div>
-                                </form>
-                                <div class="text-end">
-                                    <p class="text-primary">
-                                        Lost your password?
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                    <li class="nav-item dropdown dropstart account">
                     </li>
                     <li class="nav-item cart-show">
                         <a class="p-0 nav-link" href="#" data-bs-toggle="offcanvas"
@@ -482,6 +440,7 @@
     <script src="js/data-products.js"></script>
     <script src="js/shopping-cart.js"></script>
     <script src="js/shop-details.js"></script>
+    <script src="js/show-acccount.js"></script>
 </body>
 
 </html>
