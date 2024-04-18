@@ -54,13 +54,17 @@ registerForm.addEventListener("submit", e => {
         const password = registerForm.password.value;
         const newUser = { firstName, lastName, gender, dob, email, password }
         if (register(newUser)) {
-            login(newUser)
+            console.log("Register successfully")
+            localStorage.setItem("currentUser", JSON.stringify(newUser))
             showAccount();
+            // window.location.href = "home.html"
+            flash("success", `Registered Successfully`)
         } else {
-            console.log("This email has already been registered")
+            flash("error", "This email has already been registered")
+            registerForm.email.focus()
         }
     } else {
-        console.log("Input is not valid")
+        flash("error", "Input is not valid please check again")
     }
 });
 
@@ -132,8 +136,5 @@ function register(newUser) {
     }
     users.push(newUser)
     localStorage.setItem("users", JSON.stringify(users))
-}
-
-function login(user) {
-    localStorage.setItem("currentUser", JSON.stringify(user))
+    return true
 }

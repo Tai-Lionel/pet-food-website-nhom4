@@ -1,3 +1,4 @@
+showAccount()
 function showAccount() {
     const currentUser = JSON.parse(localStorage.getItem("currentUser")) || null
     if (currentUser) {
@@ -17,6 +18,7 @@ function showAccount() {
             document.querySelector(".sign-out").addEventListener("click", e => {
                 localStorage.removeItem("currentUser")
                 showAccount()
+                flash("success", `Sign out successfully`)
             })
         }
     } else {
@@ -114,6 +116,7 @@ function showAccount() {
                             document.querySelector(".authentication-message").style.display = "none"
                             localStorage.setItem("currentUser", JSON.stringify(user))
                             showAccount()
+                            flash("success", `Welcome back ${user.firstName} ${user.lastName}`)
                             return
                         }
                     }
@@ -148,4 +151,10 @@ function showAccount() {
         }
     }
 }
-showAccount();
+function flash(type, message) {
+    const messageHTML = `<p class="flash ${type} fade-out">${message}</p>`
+    document.querySelector(".flash-container").innerHTML = messageHTML
+    setTimeout(() => {
+        document.querySelector(".flash-container").innerHTML = ""
+    }, 6000);
+}
