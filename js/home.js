@@ -96,6 +96,15 @@ const recentBlogsHTML = recentBlogs.map(blog => `
 recentBlogsHTML.forEach(blog => {
     document.querySelector(".blog-container").innerHTML += blog
 })
-function getSelectedPost() {
+function getSelectedPost(event) {
     localStorage.setItem("selectedPost", event.currentTarget.getAttribute("value"));
+}
+
+// register successfully flash
+const flashDict = JSON.parse(localStorage.getItem("flash"))
+if (flash) {
+    flash(flashDict.type, flashDict.message)
+    setTimeout(() => {
+        localStorage.removeItem("flash")
+    }, 6);
 }

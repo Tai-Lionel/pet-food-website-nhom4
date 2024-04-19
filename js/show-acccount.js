@@ -7,8 +7,8 @@ function showAccount() {
                 <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
                 ${currentUser.firstName + " " + currentUser.lastName}
             </a>
-            <div class="dropdown-menu p-0">
-                <div class="px-3 py-2">
+            <div class="dropdown-menu p-0" style="min-width: 0 !important">
+                <div class="py-2 px-3">
                     <a href="#" class="sign-out text-black text-decoration-none text-center">Sign out</a>
                 </div>
             </div>
@@ -18,7 +18,7 @@ function showAccount() {
             document.querySelector(".sign-out").addEventListener("click", e => {
                 localStorage.removeItem("currentUser")
                 showAccount()
-                flash("success", `Sign out successfully`)
+                flash("success", `Signed out successfully`)
             })
         }
     } else {
@@ -51,7 +51,7 @@ function showAccount() {
                         <div class="mb-4">
                             <label for="password" class="form-label">Password <span
                                     class="text-danger">*</span></label>
-                            <input class="form-control text-black" type="text" id="password" name="password"
+                            <input class="form-control text-black" type="password" id="password" name="password"
                                 placeholder="Password">
                             <small class="error-message"></small>
                         </div>
@@ -94,7 +94,6 @@ function showAccount() {
                 if (isEmailValid()) {
                     showMessage(e.target, "*")
                 } else {
-                    console.log(validateEmail)
                     showMessage(e.target, "Email must be in the correct format")
                 }
             })
@@ -150,11 +149,4 @@ function showAccount() {
             }
         }
     }
-}
-function flash(type, message) {
-    const messageHTML = `<p class="flash ${type} fade-out">${message}</p>`
-    document.querySelector(".flash-container").innerHTML = messageHTML
-    setTimeout(() => {
-        document.querySelector(".flash-container").innerHTML = ""
-    }, 6000);
 }

@@ -52,12 +52,11 @@ function assignCartEvent() {
             e.currentTarget.classList.toggle("cart-selected");
             const codeSP = e.currentTarget.getAttribute("data-codeProduct");
             quantityOfCurrentProduct.setAttribute("data-CodeSP", `${codeSP}`);
-            quantityOfCurrentProduct.textContent = `${
-                e.target.previousElementSibling?.tagName.toLowerCase() ===
+            quantityOfCurrentProduct.textContent = `${e.target.previousElementSibling?.tagName.toLowerCase() ===
                 "input"
-                    ? e.target.previousElementSibling.value
-                    : 1
-            }`;
+                ? e.target.previousElementSibling.value
+                : 1
+                }`;
             const qtyStorage = quantityOfCurrentProduct.textContent;
             if (e.currentTarget.classList.contains("cart-selected")) {
                 storageCartValue.push(codeSP);
@@ -70,6 +69,11 @@ function assignCartEvent() {
                     storageQtyCart,
                     JSON.stringify(storageQtyCartValue)
                 );
+                flash("success", `Added to cart <a class="view-cart link-primary fw-bold cursor-pointer">View Cart</a>`)
+                document.querySelector(".view-cart").addEventListener("click", () => {
+                    var bsOffcanvas = new bootstrap.Offcanvas(document.getElementById('shoppingCartOffcanvas'))
+                    bsOffcanvas.show()
+                })
             } else {
                 storageCartValue.splice(storageCartValue.indexOf(codeSP), 1);
                 localStorage.setItem(
@@ -81,10 +85,13 @@ function assignCartEvent() {
                     storageQtyCart,
                     JSON.stringify(storageQtyCartValue)
                 );
+                flash("success", `Removed from cart <a class="view-cart fw-bold cursor-pointer">View Cart</a>`)
+                document.querySelector(".view-cart").addEventListener("click", () => {
+                    var bsOffcanvas = new bootstrap.Offcanvas(document.getElementById('shoppingCartOffcanvas'))
+                    bsOffcanvas.show()
+                })
             }
             cartCount();
-            // var bsOffcanvas = new bootstrap.Offcanvas(document.getElementById('shoppingCartOffcanvas'))
-            // bsOffcanvas.show()
         });
     });
 }
@@ -119,33 +126,28 @@ function renderCart() {
         }
         return `
               
-                <div class=" d-flex align-items-center gap-5 p-5 border border-subtle cart-show-fix " style="position:relative" data-codeSPCommon=${
-                    item.code
-                }>
+                <div class=" d-flex align-items-center gap-5 p-5 border border-subtle cart-show-fix " style="position:relative" data-codeSPCommon=${item.code
+            }>
                 <div class="">
-                    <img src=${item.imgUrl} style="width:100px" alt=${
-            item.name
-        }/>
+                    <img src=${item.imgUrl} style="width:100px" alt=${item.name
+            }/>
                 </div>
                 <div class=" d-flex flex-column gap-3">
                     <a class="list-products__item__name" style="display: block; font-size: 16px; line-height: 1.3; margin-top:10px;">
                         ${item.name}
                     </a>
                     <div class="product__group-prices">
-                        <p class="w-100 ${
-                            discount ? " real__price" : "normal__price"
-                        }">$${item.price.toFixed(2)}</p>
-                        <p class="w-100 sale__price ${
-                            discount ? "" : " d-none"
-                        }">$${(
-            (item.price * (100 - item.discount)) /
-            100
-        ).toFixed(2)}</p>
+                        <p class="w-100 ${discount ? " real__price" : "normal__price"
+            }">$${item.price.toFixed(2)}</p>
+                        <p class="w-100 sale__price ${discount ? "" : " d-none"
+            }">$${(
+                (item.price * (100 - item.discount)) /
+                100
+            ).toFixed(2)}</p>
 
                     </div>
-                    <div>Quantity: ${
-                        storageQtyCartValue[storageCartValue.indexOf(item.code)]
-                    }</div>
+                    <div>Quantity: ${storageQtyCartValue[storageCartValue.indexOf(item.code)]
+            }</div>
                 </div>
                 <div class="cart-remove"
                     style="cursor:pointer;position:absolute;color:gray;z-index:99;top:10px;right:10px;height:20px;width:20px"><svg

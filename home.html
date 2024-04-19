@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Pet Food</title>
+    <title>Home</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -18,12 +18,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- Custom Styles -->
+    <link rel="shortcut icon" href="images/paw-decor-right.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <section class="flash-container">
-    </section>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="font-size: 14px;">
         <div class="container-fluid">
 
@@ -617,24 +616,23 @@
     <section class="ytb-video">
         <div class="container-fluid">
             <div class="row">
-                <div class="ytb-video-body pt-5 pb-2 pt-md-9 pb-md-8 bg-black">
+                <div class="ytb-video-body bg-black py-10 position-relative">
                     <div class="play-button-container d-flex justify-content-center">
-                        <a data-bs-toggle="modal" data-bs-target="#ytb-video">
-                            <span class="fa-stack fa-4x">
-                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
-                                <i class="fas fa-play fa-stack-1x text-white"></i>
+                        <a class="video-btn" data-bs-toggle="modal" data-bs-target="#ytb-video"
+                            data-bs-src="https://www.youtube.com/embed/u72H_zZzkcw">
+                            <span class="video-play-button">
+                                <span></span>
                             </span>
                         </a>
                     </div>
-                    <div class="row mt-4">
+                    <!-- <div class="row position-absolute w-100" style="bottom: 3rem">
                         <div class="offset-md-4 col-md-4 text-center text-white">
                             <h3 class="fw-bold display-5">Let's find the perfect food for your pet</h3>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
-        <!-- Modal -->
         <div class="modal fade" id="ytb-video" tabindex="-1" aria-labelledby="youtubeVideoLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-centered">
                 <div class="modal-content">
@@ -805,9 +803,9 @@
                         <div class="mb-3">
                             <h3 class="display-4 fw-bold text-center">Subscribe to our newsletter</h3>
                         </div>
-                        <div class="button-group d-flex gap-2">
+                        <form class="button-group d-flex gap-2">
                             <input type="email" class="form-control rounded-5 text-black"
-                                placeholder="Enter your email...">
+                                placeholder="Enter your email..." required>
                             <button class="btn btn-primary fw-bold text-uppercase d-flex align-items-center">
                                 Subscribe
                                 <span class="fa-stack sm-text ms-1" style="margin-bottom: 1px;">
@@ -815,7 +813,7 @@
                                     <i class="fas fa-play fa-stack-1x text-primary"></i>
                                 </span>
                             </button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -1002,10 +1000,10 @@
             </div>
         </div>
     </footer>
-
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/navbar-effect.js"></script>
+    <script src="js/flash-message.js"></script>
     <script src="js/data-products.js"></script>
     <script src="js/shopping-cart.js"></script>
     <script src="js/show-acccount.js"></script>

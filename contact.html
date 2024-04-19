@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Pet Food</title>
+  <title>Contact</title>
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -18,12 +18,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Custom Styles -->
+  <link rel="shortcut icon" href="images/paw-decor-right.png" type="image/x-icon">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .breadcrumb-wrapper {
+      background: url("images/bg-curly-dark.png"), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("images/pages_breadcrumb.png") center center no-repeat;
+      background-size: cover;
+    }
+  </style>
 </head>
 
 <body>
-  <section class="flash-container">
-  </section>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="font-size: 14px;">
     <div class="container-fluid">
 
@@ -232,15 +237,13 @@
               <i class="fas fa-circle" style="transform: scale(0.5);"></i>
             </span>
             <!-- Change into the name of the page -->
-            <p class="m-0 text-white-50">Change me</p>
+            <p class="m-0 text-white-50">Contact Us</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- Your code goes here -->
   <main id="contact">
     <div class="section-one">
       <div class="container">
@@ -317,7 +320,7 @@
     </div>
     <div class="section-two">
       <div class="container">
-        <div class="form">
+        <form class="form contact-form">
           <div class="row">
             <div class="col-xl-12 col-lg-12">
               <div class="tHead">
@@ -330,30 +333,31 @@
               </div>
             </div>
             <div class="col-xl-4 col-lg-4">
-              <input type="text" placeholder="Name">
+              <input type="text" name="name" id="name" placeholder="Name">
+              <div class="error-message ps-3"></div>
             </div>
             <div class="col-xl-4 col-lg-4">
-              <input type="text" placeholder="Phone">
+              <input type="text" name="phone" id="phone" placeholder="Phone">
+              <div class="error-message ps-3"></div>
             </div>
             <div class="col-xl-4 col-lg-4">
-              <input type="text" placeholder="Email address">
+              <input type="email" name="email" id="email" placeholder="Email address">
+              <div class="error-message ps-3"></div>
+            </div>
+            <div class="col-xl-12 col-lg-12 mb-3">
+              <textarea name="message" id="message" cols="50" rows="8" placeholder="Message"></textarea>
+              <div class="error-message ps-3"></div>
             </div>
             <div class="col-xl-12 col-lg-12">
-              <textarea name="Message" id="" cols="50" rows="8" placeholder="Message"></textarea>
-            </div>
-            <div class="col-xl-12 col-lg-12">
-              <div class="btn">
+              <div class="d-flex justify-content-center">
                 <button>SUBMIT</button>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </main>
-  <!-- Your code goes here -->
-  <!-- Your code goes here -->
-
 
   <footer class="footer pt-7 pb-6 lg-text text-center text-md-start text-white">
     <div class="container">
@@ -479,9 +483,12 @@
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/navbar-effect.js"></script>
+  <script src="js/flash-message.js"></script>
   <script src="js/data-products.js"></script>
   <script src="js/shopping-cart.js"></script>
   <script src="js/show-acccount.js"></script>
+  <script src="js/contact.js">
+  </script>
 </body>
 
 </html>
