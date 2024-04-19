@@ -69,7 +69,7 @@ function assignCartEvent() {
                     storageQtyCart,
                     JSON.stringify(storageQtyCartValue)
                 );
-                flash("success", `Added to cart <a class="view-cart link-primary fw-bold cursor-pointer">View Cart</a>`)
+                flash("success", `Added to cart <a class="view-cart link-primary fw-bold cursor-pointer ms-2">View Cart</a>`)
                 document.querySelector(".view-cart").addEventListener("click", () => {
                     var bsOffcanvas = new bootstrap.Offcanvas(document.getElementById('shoppingCartOffcanvas'))
                     bsOffcanvas.show()
@@ -85,7 +85,7 @@ function assignCartEvent() {
                     storageQtyCart,
                     JSON.stringify(storageQtyCartValue)
                 );
-                flash("success", `Removed from cart <a class="view-cart fw-bold cursor-pointer">View Cart</a>`)
+                flash("success", `Removed from cart <a class="view-cart fw-bold cursor-pointer ms-2">View Cart</a>`)
                 document.querySelector(".view-cart").addEventListener("click", () => {
                     var bsOffcanvas = new bootstrap.Offcanvas(document.getElementById('shoppingCartOffcanvas'))
                     bsOffcanvas.show()

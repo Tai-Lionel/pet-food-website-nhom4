@@ -102,9 +102,29 @@ function getSelectedPost(event) {
 
 // register successfully flash
 const flashDict = JSON.parse(localStorage.getItem("flash"))
-if (flash) {
+if (flashDict) {
     flash(flashDict.type, flashDict.message)
     setTimeout(() => {
         localStorage.removeItem("flash")
     }, 6);
 }
+
+// back to top
+const backToTopContainer = document.createElement("div")
+backToTopContainer.innerHTML = `
+    <span class="back-to-top fa-stack fa-2x cursor-pointer">
+        <i class="fas fa-circle fa-stack-2x text-primary"></i>
+        <i class="fa-sharp fa-solid fa-angle-up fa-stack-1x text-white"></i>
+    </span>
+`
+document.body.appendChild(backToTopContainer)
+document.querySelector(".back-to-top").addEventListener("click", function () {
+    $("html, body").animate({ scrollTop: 0 }, "slow")
+})
+document.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+        document.querySelector(".back-to-top").style.opacity = 1
+    } else {
+        document.querySelector(".back-to-top").style.opacity = 0
+    }
+})

@@ -13,9 +13,7 @@
     <link rel="stylesheet" href="css/fontawesome.css">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/googlefont.css">
 
     <!-- Custom Styles -->
     <link rel="shortcut icon" href="images/paw-decor-right.png" type="image/x-icon">
@@ -23,7 +21,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="font-size: 14px;">
+    <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100" style="font-size: 14px;">
         <div class="container-fluid">
 
             <!-- the hamburger -->
@@ -592,7 +590,7 @@
 
     <section class="products py-7 text-black">
         <div class="container">
-            <div class="row mb-5">
+            <div class="row mb-4">
                 <div class="offset-md-3 col-md-6">
                     <div class="text-container text-center">
                         <div class="mb-4">
@@ -795,9 +793,9 @@
     </section>
 
     <section class="subscribe">
-        <div class="container bg-success py-7 rounded-0 rounded-md-4 position-relative subscribe-body">
+        <div class="container bg-success py-7 rounded-4 rounded-md-4 position-relative subscribe-body">
             <img class="position-absolute subscribe-img" src="images/subscribe-img.png" alt="">
-            <div class="row">
+            <div class="row position-relative" style="z-index: 1;">
                 <div class="offset-md-3 col-md-6">
                     <div class="h-100 d-flex flex-column justify-content-center">
                         <div class="mb-3">
@@ -880,7 +878,7 @@
                         </p>
                     </div>
                     <div>
-                        <a href="#" class="py-3 btn btn-light fw-bold text-uppercase">
+                        <a href="register.html" class="py-3 btn btn-light fw-bold text-uppercase">
                             Sign up
                             <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 2px">
                                 <i class="fas fa-circle fa-stack-2x text-primary"></i>
@@ -1002,7 +1000,6 @@
     </footer>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/navbar-effect.js"></script>
     <script src="js/flash-message.js"></script>
     <script src="js/data-products.js"></script>
     <script src="js/shopping-cart.js"></script>

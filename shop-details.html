@@ -12,31 +12,16 @@
     <link rel="stylesheet" href="./css/fontawesome.css" />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet" />
-
-    <!-- reset -->
-    <style>
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p {
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="css/googlefont.css">
 
     <!-- Custom Styles -->
     <link rel="shortcut icon" href="images/paw-decor-right.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/styles.css" />
     <style>
+        p {
+            margin: 0;
+        }
+
         .breadcrumb-wrapper {
             background: url("images/bg-curly-dark.png"), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("images/breadcrumb_shop_bg.png") center center no-repeat;
             background-size: cover;
@@ -45,7 +30,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="font-size: 14px">
+    <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100" style="font-size: 14px;">
         <div class="container-fluid">
             <!-- the hamburger -->
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-on-mobile">
@@ -321,7 +306,7 @@
                         </p>
                     </div>
                     <div>
-                        <a href="#" class="py-3 btn btn-light fw-bold text-uppercase">
+                        <a href="register.html" class="py-3 btn btn-light fw-bold text-uppercase">
                             Sign up
                             <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 2px">
                                 <i class="fas fa-circle fa-stack-2x text-primary"></i>
@@ -443,7 +428,6 @@
     </footer>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/navbar-effect.js"></script>
     <script src="js/flash-message.js"></script>
     <script src="js/data-products.js"></script>
     <script src="js/shopping-cart.js"></script>

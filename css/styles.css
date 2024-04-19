@@ -103,7 +103,7 @@
 }
 
 .header {
-  background: url("/images/header-bg-curly.png"), linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/images/peakpx.jpg") top center no-repeat;
+  background: url("/images/header-bg-curly.png"), linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/images/peakpx.jpg") center center no-repeat;
   background-size: cover;
 }
 
@@ -2035,7 +2035,7 @@ ul {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-image: url(../images/card-member.png);
+  background-image: url("../images/card-member.png");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
@@ -2144,7 +2144,7 @@ ul {
   padding: 1rem 1rem;
   margin: 0.5rem;
   min-width: 300px;
-  border-radius: 5px;
+  border-radius: 4px;
   /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); */
   color: white;
   animation: fade-in 3s ease;
@@ -2156,7 +2156,7 @@ ul {
 
 .flash {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .error {
@@ -2164,7 +2164,7 @@ ul {
 }
 
 .success {
-  --bs-success: rgb(0, 200, 0);
+  --bs-success: rgba(0, 180, 0, 0.8) !important;
   background-color: var(--bs-success);
 }
 
@@ -2178,21 +2178,21 @@ ul {
 
 @keyframes fade-in {
   0% {
-    opacity: 0;
+    opacity: 0 !important;
   }
 
   100% {
-    opacity: 1;
+    opacity: 1 !important;
   }
 }
 
 @keyframes fade-out {
   0% {
-    opacity: 1;
+    opacity: 1 !important;
   }
 
   100% {
-    opacity: 0;
+    opacity: 0 !important;
   }
 }
 
@@ -2266,4 +2266,13 @@ ul {
     transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
     opacity: 0;
   }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
