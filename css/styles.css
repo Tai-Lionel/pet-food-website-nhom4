@@ -1365,7 +1365,7 @@ ul {
 
 #contact .section-one .box {
   height: 100%;
-  background-image: url('/starter-code/images/contact_us_bg.png');
+  background-image: url('../images/contact_us_bg.png');
   padding: 40px 50px;
   border-radius: 20px;
   background-repeat: no-repeat;
