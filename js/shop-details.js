@@ -81,7 +81,8 @@ for (let i = 0; i < dataProductAll.length; i++) {
                         <div class="product-details__content-left position-relative" style=" padding: 60px 100px">
                             <div class="direction position-absolute start-0 top-0 mt-3 ms-3">
                                 <button class="direction-link direction-back"><a href="./shop.html"
-                                        style="text-decoration:none;color:black!important">Shop -></a></button>
+                                        style="text-decoration:none;color:black">Shop</a></button>
+                                        <div class="dauchamamucam"></div>
                                 <button class="direction-link direction-link--active">Details</button>
                             </div>
                             <div class="product-details__content-left__img-wrapper"> <img src=${
@@ -94,12 +95,14 @@ for (let i = 0; i < dataProductAll.length; i++) {
                             <h3 class="product-details__name pb-3">${
                                 dataProductAll[i].name
                             }</h3>
-                            <div class="mb-4" style="color:orange;font-weight:bold">Categories: ${
-                                dataProductAll[i].categories
-                            }</div>
-                            <div class="mb-4" style="color:orange;font-weight:bold">Brand: ${
+                            <div class="mb-1" style="color:#bbb;font-size:14px">Categories:
+                               <span class="text-black"> ${
+                                   dataProductAll[i].categories
+                               }</span>
+                            </div>
+                            <div class="mb-5" style="color:#bbb;font-size:14px">Brand: <span class="text-black">${
                                 dataProductAll[i].brand
-                            }</div>
+                            }</span></div>
                             <div class="product-details__desc pb-5" style="max-width:80%">${
                                 dataProductAll[i].desc
                             }</div>
@@ -127,7 +130,7 @@ for (let i = 0; i < dataProductAll.length; i++) {
             dataProductAll[i].code
         }></i>
                             </div>
-                            <div class="product__group-prices p-5 mt-2">
+                            <div class="product__group-prices p-5 mt-2 sale__price font-25px">
                                 <p class=${
                                     dataProductAll[i].discount > 0
                                         ? "real__price real__price-details"
