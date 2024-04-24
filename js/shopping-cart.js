@@ -158,7 +158,13 @@ function renderCart() {
         cartTotalPrice.className = "w-100 d-flex flex-column car-total-price gap-3 py-3 border-top border-grey"
         cartTotalPrice.innerHTML = `
             <div class="total text-black d-flex justify-content-between gap-2">Subtotal : <span class="total-price text-primary">$${getTotalPriceInCart()}</span></div>
-            <button class="btn btn-primary rounded-5 text-uppercase fw-bold py-3 checkout">Checkout</button>
+            <button class="btn btn-primary rounded-5 text-uppercase fw-bold py-3 checkout">
+                Checkout
+                <span class="fa-stack sm-text ms-1" style="margin-bottom: 2px;">
+                    <i class="fas fa-circle fa-stack-2x text-black"></i>
+                    <i class="fas fa-play fa-stack-1x text-primary"></i>
+                </span>
+            </button>
         `
         if (document.querySelector(".offcanvas-body").children[1]) {
             document.querySelector(".offcanvas-body").removeChild(document.querySelector(".offcanvas-body").children[1])

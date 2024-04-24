@@ -497,8 +497,14 @@
             } else {
                 // Create a button element
                 const checkoutButton = document.createElement("button");
-                checkoutButton.className = "btn btn-primary px-8 py-3 fs-6 rounded-10 checkout";
-                checkoutButton.textContent = "Checkout";
+                checkoutButton.className = "btn btn-primary px-8 py-3 fs-6 rounded-10 checkout fw-semibold";
+                checkoutButton.innerHTML = `
+                    Checkout
+                    <span class="fa-stack sm-text ms-1" style="margin-bottom: 2px;">
+                        <i class="fas fa-circle fa-stack-2x text-black"></i>
+                        <i class="fas fa-play fa-stack-1x text-primary"></i>
+                    </span>
+                `
                 // Add event listener to the button
                 checkoutButton.addEventListener("click", e => {
                     document.body.style.cursor = "wait"
