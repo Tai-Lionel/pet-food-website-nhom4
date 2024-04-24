@@ -125,55 +125,51 @@ function renderCart() {
             discount = false;
         }
         return `
-              
-                <div class=" d-flex align-items-center gap-5 p-5 border border-subtle cart-show-fix " style="position:relative" data-codeSPCommon=${item.code
-            }>
-                <div class="">
-                    <img src=${item.imgUrl} style="width:100px" alt=${item.name
-            }/>
-                </div>
-                <div class=" d-flex flex-column gap-3">
-                    <a class="list-products__item__name" style="display: block; font-size: 16px; line-height: 1.3; margin-top:10px;">
-                        ${item.name}
-                    </a>
-                    <div class="product__group-prices">
-                        <p class="w-100 ${discount ? " real__price" : "normal__price"
-            }">$${item.price.toFixed(2)}</p>
-                        <p class="w-100 sale__price ${discount ? "" : " d-none"
-            }">$${(
-                (item.price * (100 - item.discount)) /
-                100
-            ).toFixed(2)}</p>
-
+                <div class=" d-flex align-items-center cart-show-fix mb-4 gap-4" style="position:relative" data-codeSPCommon=${item.code}>
+                    <div class="">
+                        <img class="border border-grey border-1 rounded-3" src=${item.imgUrl} style="max-width:90px" alt=${item.name}/>
                     </div>
-                    <div>Quantity: ${storageQtyCartValue[storageCartValue.indexOf(item.code)]
-            }</div>
-                </div>
-                <div class="cart-remove"
-                    style="cursor:pointer;position:absolute;color:gray;z-index:99;top:10px;right:10px;height:20px;width:20px"><svg
-                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                        class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </div>
-            </div>
-                
+                    <div class=" d-flex flex-column gap-2 align-items-start">
+                        <a class="list-products__item__name" style="display: block; font-size: 16px; line-height: 1.3;">
+                            ${item.name}
+                        </a>
+                        <div class="product__group-prices">
+                            <p class="w-100 m-0 ${discount ? " real__price" : "normal__price"}">$${item.price.toFixed(2)}</p>
+                            <p class="w-100 m-0 sale__price ${discount ? "" : " d-none"}">$${((item.price * (100 - item.discount)) / 100).toFixed(2)}</p>
+                        </div>
+                        <div class="lg-text">Quantity: ${storageQtyCartValue[storageCartValue.indexOf(item.code)]}</div>
+                    </div>
+                    <div class="cart-remove"
+                        style="cursor:pointer;position:absolute;color:gray;z-index:99;top:0;right:0;height:20px;width:20px"><svg
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                </div>                
                `;
     });
     if (storageCartValue.length == 0) {
         cartShowBody.innerHTML = `<div> No products in the cart</div>`;
+        if (document.querySelector(".offcanvas-body").children[1]) {
+            document.querySelector(".offcanvas-body").removeChild(document.querySelector(".offcanvas-body").children[1])
+        }
     } else {
-        cartShowBody.innerHTML =
-            cartShowContent.join("") +
-            `
-                    <div class="d-none text-no-products"> No products in the cart</div>
-                    <div class="d-flex align-items-center mt-5 justify-content-between w-100 p-5 car-total-price">
-                        <div class="total" style="color:black;font-weight:600">Total : <span class="total-price">${getTotalPriceInCart()}</span></div>
-                        <button class="bill" style="border: none; outline: none; padding: 10px; background-color: green; color: white; font-weight: 600; border-radius: 20px; ">
-                        BUY ALL
-                        </button>
-                    </div>
-                `;
+        cartShowBody.innerHTML = cartShowContent.join("");
+        const cartTotalPrice = document.createElement("div")
+        cartTotalPrice.className = "w-100 d-flex flex-column car-total-price gap-3 py-3 border-top border-grey"
+        cartTotalPrice.innerHTML = `
+            <div class="total text-black d-flex justify-content-between gap-2">Subtotal : <span class="total-price text-primary">$${getTotalPriceInCart()}</span></div>
+            <button class="btn btn-primary rounded-5 text-uppercase fw-bold py-3 checkout">Checkout</button>
+        `
+        if (document.querySelector(".offcanvas-body").children[1]) {
+            document.querySelector(".offcanvas-body").removeChild(document.querySelector(".offcanvas-body").children[1])
+        }
+
+        document.querySelector(".offcanvas-body").appendChild(cartTotalPrice)
+        document.querySelector(".checkout").addEventListener("click", e => {
+            window.location.href = "cart.html"
+        })
     }
     assignRemoveCart();
 }

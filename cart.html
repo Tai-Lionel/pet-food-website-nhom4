@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/fontawesome.css">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="css/googlefont.css">
+
+    <!-- Custom Styles -->
+    <link rel="shortcut icon" href="images/paw-decor-right.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .breadcrumb-wrapper {
+            background: url("images/bg-curly-dark.png"), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("images/breadcrumb_our_blog.png") center center no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100" style="font-size: 14px;">
+        <div class="container-fluid">
+
+            <!-- the hamburger -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar-on-mobile">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- the brand -->
+            <a class="navbar-brand mx-auto" href="home.html">
+                <img src="images/logo.svg" alt="" style="width: 75px;">
+            </a>
+
+            <!-- the cart on small screen => mobile -->
+            <li class="ms-auto d-inline-block d-lg-none cart-show">
+                <a class="nav-link-mobile p-0" data-bs-toggle="offcanvas" data-bs-target="#shoppingCartOffcanvas">
+                    <span><i class="fa-solid fa-cart-shopping text-primary"></i></span>
+                </a>
+            </li>
+
+            <!-- the nav bar on large screen => desktop -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav navbar-nav-1 ms-lg-6 mb-lg-0 fw-bold">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="home.html">
+                            <span class="nav-link-hover">HOME</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="shop.html">
+                            <span class="nav-link-hover">SHOP</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="about.html">
+                            <span class="nav-link-hover">ABOUT</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="blog.html">
+                            <span class="nav-link-hover">BLOG</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link nav-link-hover dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            <span class="nav-link-hover">PAGES</span>
+                            <i class="fa-solid fa-plus md-text position-absolute"></i>
+                        </a>
+                        <ul class="dropdown-menu shadow-lg rounded-4">
+                            <li>
+                                <a class="dropdown-item" href="faq.html">
+                                    <span class="nav-link-hover">FAQ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+                            </li>
+                            <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+                            <li>
+                                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+                            </li>
+                            <li><a class="dropdown-item" href="team-members.html">Members</a></li>
+                            <li>
+                                <img class="py-2" style="width: 150px;" src="images/footer_divide.png" alt="">
+                            </li>
+                            <li><a class="dropdown-item" href="sitemap.html">Sitemap</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-hover" href="contact.html">
+                            <span class="nav-link-hover">CONTACT</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-nav-2 ms-auto mb-2 mb-lg-0 fw-bold d-flex">
+                    <li class="nav-item">
+                        <a class="nav-link p-0" href="store-locator.html">
+                            <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
+                            Store Locator
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown dropstart account">
+                    </li>
+                    <li class="nav-item cart-show">
+                        <a class="nav-link p-0" href="#" data-bs-toggle="offcanvas"
+                            data-bs-target="#shoppingCartOffcanvas">
+                            <span class="me-2"><i class="fa-solid fa-cart-shopping text-primary"></i></span>
+                            Cart
+                            <span class="fa-stack ms-1" style="font-size: 10px;">
+                                <i class="fas fa-circle text-primary fa-stack-2x"></i>
+                                <p class="fa-stack-1x text-black cart-count">0</p>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- the shopping cart offcanvas -->
+    <div class="offcanvas offcanvas-end text-black" tabindex="-1" id="shoppingCartOffcanvas"
+        aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header border-bottom py-4">
+            <h5 class="offcanvas-title" id="offcanvasLabel">Shopping cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p class="text-black-50 text-center xxl-text cart-show-body">No products in the cart</p>
+        </div>
+    </div>
+
+    <!-- the nav bar canvas on small screen => mobile  -->
+    <div class="offcanvas offcanvas-start text-bg-light" tabindex="-1" id="navbar-on-mobile" style="z-index: 1055">
+        <div class="offcanvas-header px-4 pt-4">
+            <h5 class="offcanvas-title fw-bold" id="offcanvasLabel">main menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <img class="mx-4" src="images/line-break.png" alt="" style="width: 60px;">
+        <div class="offcanvas-body">
+            <ul class="navbar-nav-mobile fw-bold list-group list-group-flush">
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">HOME</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">SHOP</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none active" href="#">ABOUT</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">BLOG</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">PAGES</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none" href="#">CONTACT</a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3">
+                    <a class="navbar-link-mobile text-decoration-none p-0" href="#">
+                        <span class="me-2"><i class="fa-solid fa-location-dot text-primary"></i></span>
+                        Store Locator
+                    </a>
+                </li>
+                <li class="navbar-item-mobile list-group-item p-0 py-2 mx-3 dropdown dropstart">
+                    <a class="navbar-link-mobile text-decoration-none p-0" data-bs-toggle="modal"
+                        data-bs-target="#signInModal" href="#">
+                        <span class="me-2"><i class="fa-solid fa-user text-primary"></i></span>
+                        Sign In
+                    </a>
+                    <!-- Modal -->
+                    <div class="modal fade" id="signInModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                        style="z-index: 1800;">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header border-bottom-0    ">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-0">
+                                    <div class="sign-in px-4 pt-3 pb-3 bg-light text-black w-100">
+                                        <div class="d-flex justify-content-between">
+                                            <h3>Sign in</h3>
+                                            <a href="#" class="text-primary">Create an Account</a>
+                                        </div>
+                                        <form class="mb-3">
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Username or email <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control text-black" type="text" id="username"
+                                                    placeholder="Username">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="password" class="form-label">Password <span
+                                                        class="text-danger">*</span></label>
+                                                <input class="form-control text-black" type="text" id="password"
+                                                    placeholder="Password">
+                                            </div>
+                                            <div class="d-grid">
+                                                <button class="btn btn-primary fw-bold text-uppercase">
+                                                    Login
+                                                    <span class="fa-stack super-sm-text ms-1"
+                                                        style="margin-bottom: 1px;">
+                                                        <i class="fas fa-circle fa-stack-2x text-black"></i>
+                                                        <i class="fas fa-play fa-stack-1x text-primary"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <div class="text-end">
+                                            <p class="text-primary">Lost your password?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="breadcrumb-wrapper bg-black text-white pt-8 pb-8">
+        <div class="container">
+            <div class="row">
+                <div class="d-flex flex-column justify-content-center align-items-center gap-2">
+                    <!-- Change into the name of the page -->
+                    <h2 class="fw-bold display-2">Checkout</h2>
+                    <div class="d-flex gap-2 lg-text">
+                        <a href="home.html" class="m-0 text-decoration-none link-light">Home Page</a>
+                        <span class="text-primary">
+                            <i class="fas fa-circle" style="transform: scale(0.5);"></i>
+                        </span>
+                        <!-- Change into the name of the page -->
+                        <p class="m-0 text-white-50">Checkout</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <table class="table align-middle table-borderless shopping-cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Unitprice</th>
+                        <th>Quantity</th>
+                        <th>Linetotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="shopping-cart-body">
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center action-button-container">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt-7 pb-6 lg-text text-center text-md-start text-white">
+        <div class="container">
+            <div
+                class="d-flex flex-wrap flex-column flex-md-row gap-5 gap-md-0 justify-content-between align-items-center mb-5">
+                <img src="images/logo.svg" alt="" style="width: 100px;">
+                <div class="location d-flex gap-2">
+                    <span><i class="fa-regular fa-location-dot text-primary"></i></span>
+                    <p class="fw-bold m-0">48 West Temple Drive <br> Ashburn, VA 20147 </p>
+                </div>
+                <div class="open-time d-flex gap-2">
+                    <span><i class="fa-regular fa-clock text-primary"></i></span>
+                    <div>
+                        <p class="fw-bold m-0">Mon to Sun:</p>
+                        <p class="m-0">10:00 AM To 6:00 PM</p>
+                    </div>
+                </div>
+                <div class="location d-flex gap-2">
+                    <span><i class="fa-regular fa-envelope text-primary"></i></span>
+                    <div>
+                        <p class="fw-bold m-0">Email Us:</p>
+                        <p class="m-0">support@example.com</p>
+                    </div>
+                </div>
+                <p class="phone-number fw-bold text-primary fs-2 m-0">(844)-1800333556</p>
+            </div>
+            <img class="mb-5" src="images/footer_divide.png" alt="" style="max-width: 100%;">
+            <div class="row mb-7">
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <h4 class="fw-bold">Join our community & save $3.00 on wellness!</h4>
+                    </div>
+                    <div class="mb-3">
+                        <p class="text-white-50">We'll help you find the food that is right for your pet even if it
+                            isn't our own.</p>
+                    </div>
+                    <div>
+                        <a href="register.html" class="btn btn-light py-3 fw-bold text-uppercase">
+                            Sign up
+                            <span class="fa-stack super-sm-text ms-1" style="margin-bottom: 2px;">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fas fa-play fa-stack-1x text-white"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-9 mt-5 mt-md-0">
+                    <div class="row gap-5 gap-md-0">
+                        <div class="offset-md-2 col-md-2">
+                            <div class="mb-4">
+                                <p class="fw-bold text-uppercase xl-text">Our Products</p>
+                            </div>
+                            <ul class="list-unstyled vstack gap-2">
+                                <li><a href="#" class="text-white-50 text-decoration-none">For Cats</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">For Dogs</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Challenger</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">FreeStyle for Cats</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">FreeStyle for Dogs</a></li>
+                            </ul>
+                        </div>
+                        <div class="offset-md-2 col-md-2">
+                            <div class="mb-3">
+                                <p class="fw-bold text-uppercase xl-text">Community</p>
+                            </div>
+                            <ul class="list-unstyled vstack gap-2">
+                                <li><a href="#" class="text-white-50 text-decoration-none">News & Stories</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Mix-It Recipes</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Our Story</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Retailer Asset Portal</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="offset-md-2 col-md-2">
+                            <div class="mb-3">
+                                <p class="fw-bold text-uppercase xl-text">Get in touch</p>
+                            </div>
+                            <ul class="list-unstyled vstack gap-2">
+                                <li><a href="#" class="text-white-50 text-decoration-none">Careers</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Contact us</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">FAQ</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Find a Retailer</a></li>
+                                <li><a href="#" class="text-white-50 text-decoration-none">Policies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 d-flex flex-column flex-md-row">
+                    <p class="text-white-50">Copyright &copy; 2021 <span class="text-white">Gopet</span>. All rights
+                        reserved</p>
+                    <div class="ms-md-auto">
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x text-white"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fab fa-twitter fa-stack-1x text-white"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fab fa-instagram fa-stack-1x text-white"></i>
+                            </span>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                <i class="fab fa-pinterest fa-stack-1x text-white"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/flash-message.js"></script>
+    <script src="js/data-products.js"></script>
+    <script src="js/shopping-cart.js"></script>
+    <script src="js/show-acccount.js"></script>
+    <script>
+        function showCartOnTable() {
+            dataCart = dataProductAll.filter(function (item) {
+                return storageCartValue.includes(item.code);
+            });
+            const cartShowContent = dataCart.map((item, index) => {
+                let discount = false;
+                if (item.discount > 0) {
+                    discount = true;
+                } else {
+                    discount = false;
+                }
+                return `
+                        <tr data-codeSPCommon=${item.code}>
+                            <td>
+                                <a class="d-flex align-items-center gap-3 text-decoration-none cursor-pointer product-link">
+                                    <img style="max-width: 100px;" src="${item.imgUrl}" alt="">
+                                    <p class="mb-0">${item.name}</p>
+                                </a>
+                            </td>
+                            <td>
+                                <p class="mb-0">$${((item.price * (100 - item.discount)) / 100).toFixed(2)}</p>
+                            </td>
+                            <td>
+                                <p class="mb-0">${storageQtyCartValue[storageCartValue.indexOf(item.code)]}</p>
+                            </td>
+                            <td>
+                                <p class="mb-0">$${(((item.price * (100 - item.discount)) / 100) * storageQtyCartValue[storageCartValue.indexOf(item.code)]).toFixed(2)}</p>
+                            </td>
+                            <td>
+                                <div class="text-danger cursor-pointer remove-button">Remove</div>
+                            </td>
+                        </tr>
+                    `
+            });
+            const shoppingCartBody = document.querySelector(".shopping-cart-body")
+            if (storageCartValue.length == 0) {
+                shoppingCartBody.innerHTML = `<tr><td colspan="5">No products in the cart<td></tr>`;
+            } else {
+                shoppingCartBody.innerHTML = cartShowContent.join("") + `
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                            <p class="mb-0">Subtotal: </p>
+                        </td>
+                        <td>
+                            <p class="mb-0 subtotal text-primary fw-bold fs-3">$${getTotalPriceInCart()}</p>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                `
+                document.querySelectorAll(".product-link").forEach(link => {
+                    link.addEventListener("click", e => {
+                        console.log(e.currentTarget.parentNode.parentNode.getAttribute("data-codeSPCommon"))
+                        localStorage.setItem("ItemDetailSelected", JSON.stringify(e.currentTarget.parentNode.parentNode.getAttribute("data-codeSPCommon")))
+                        window.location.href = "shop-details.html"
+                    })
+                })
+            }
+
+            console.log(storageCartValue.length)
+            if (storageCartValue.length === 0) {
+                document.querySelector(".action-button-container").innerHTML = `
+                    <a href="shop.html" class="btn btn-primary px-7 py-3 fs-6 rounded-10 return-to-shop">Rerturn to shop</a>
+                `
+            } else {
+                // Create a button element
+                const checkoutButton = document.createElement("button");
+                checkoutButton.className = "btn btn-primary px-7 py-3 fs-6 rounded-10 checkout";
+                checkoutButton.textContent = "Checkout";
+                // Add event listener to the button
+                checkoutButton.addEventListener("click", () => {
+                    document.body.style.cursor = "progress"
+                    setTimeout(() => {
+                        localStorage.setItem("ListCart", JSON.stringify([]));
+                        window.location.href = "shop.html";
+                        localStorage.setItem("flash", JSON.stringify({ type: "success", message: "You have successfully checked out" }));
+                    }, 3000);
+                });
+                // Append the button to the container
+                document.querySelector(".action-button-container").innerHTML = ""
+                document.querySelector(".action-button-container").appendChild(checkoutButton);
+            }
+
+            document.querySelectorAll(".remove-button").forEach((item) =>
+                item.addEventListener("click", function (e) {
+                    // remove it from the cart in the local storage
+                    let codeRemove = e.currentTarget.parentNode.parentNode.getAttribute("data-codeSPCommon");
+                    const temp = JSON.parse(localStorage.getItem("ListCart")); temp.splice(temp.indexOf(codeRemove), 1); localStorage.setItem("ListCart", JSON.stringify(temp));
+
+                    // show number of products on the cart count
+                    document.querySelector(".cart-count").textContent = temp.length;
+
+                    // set the number of products inside the cart in the localstorage 
+                    storageQtyCartValue.splice(storageCartValue.indexOf(codeRemove), 1);
+                    localStorage.setItem(storageQtyCart, JSON.stringify(storageQtyCartValue));
+                    listCodeCart = localStorage.getItem(storageCart);
+                    storageCartValue = JSON.parse(listCodeCart) || [];
+
+                    // update the table
+                    showCartOnTable()
+                })
+            );
+        }
+        showCartOnTable();
+    </script>
+</body>
+
+</html>

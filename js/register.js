@@ -54,10 +54,12 @@ registerForm.addEventListener("submit", e => {
         const password = registerForm.password.value;
         const newUser = { firstName, lastName, gender, dob, email, password }
         if (register(newUser)) {
-            localStorage.setItem("currentUser", JSON.stringify(newUser))
-            showAccount()
-            window.location.href = "home.html"
-            localStorage.setItem("flash", JSON.stringify({ "type": "success", "message": `Welcome to Gopet ${newUser.firstName} ${newUser.lastName}` }))
+            setTimeout(() => {
+                localStorage.setItem("currentUser", JSON.stringify(newUser))
+                showAccount()
+                window.location.href = "home.html"
+                localStorage.setItem("flash", JSON.stringify({ "type": "success", "message": `Welcome to Gopet ${newUser.firstName} ${newUser.lastName}` }))
+            }, 3000);
         } else {
             flash("error", "This email has already been registered")
             registerForm.email.focus()
