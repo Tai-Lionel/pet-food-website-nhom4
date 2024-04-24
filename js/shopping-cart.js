@@ -1,12 +1,15 @@
 var storageFavorite = "ListCodeSP";
 let listCodeFavorite = localStorage.getItem(storageFavorite);
 let storageFavoriteValue = JSON.parse(listCodeFavorite) || [];
+
 var storageCart = "ListCart";
 let listCodeCart = localStorage.getItem(storageCart);
 let storageCartValue = JSON.parse(listCodeCart) || [];
+
 var storageQtyCart = "ListQtyCart";
 let listCodeQtyCart = localStorage.getItem(storageQtyCart);
 let storageQtyCartValue = JSON.parse(listCodeQtyCart) || [];
+
 const dataProductAll = productList;
 
 // favorite
@@ -24,15 +27,8 @@ function assignHeartEvent() {
                     JSON.stringify(storageFavoriteValue)
                 );
             } else {
-                storageFavoriteValue.splice(
-                    storageFavoriteValue.indexOf(codeSP),
-                    1
-                );
-
-                localStorage.setItem(
-                    storageFavorite,
-                    JSON.stringify(storageFavoriteValue)
-                );
+                storageFavoriteValue.splice(storageFavoriteValue.indexOf(codeSP), 1);
+                localStorage.setItem(storageFavorite, JSON.stringify(storageFavoriteValue));
             }
         });
     });
@@ -71,6 +67,7 @@ function assignCartEvent() {
                 );
                 flash("success", `Added to cart <a class="view-cart link-primary fw-bold cursor-pointer ms-2">View Cart</a>`)
                 document.querySelector(".view-cart").addEventListener("click", () => {
+                    renderCart()
                     var bsOffcanvas = new bootstrap.Offcanvas(document.getElementById('shoppingCartOffcanvas'))
                     bsOffcanvas.show()
                 })
@@ -87,6 +84,7 @@ function assignCartEvent() {
                 );
                 flash("success", `Removed from cart <a class="view-cart fw-bold cursor-pointer ms-2">View Cart</a>`)
                 document.querySelector(".view-cart").addEventListener("click", () => {
+                    renderCart()
                     var bsOffcanvas = new bootstrap.Offcanvas(document.getElementById('shoppingCartOffcanvas'))
                     bsOffcanvas.show()
                 })

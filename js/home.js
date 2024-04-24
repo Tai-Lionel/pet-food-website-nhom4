@@ -128,3 +128,17 @@ document.addEventListener("scroll", () => {
         document.querySelector(".back-to-top").style.opacity = 0
     }
 })
+
+let interval = 3000
+document.querySelectorAll(".num").forEach(num => {
+    let startValue = 0
+    let endValue = parseInt(num.getAttribute("data-value"))
+    let duration = Math.floor(interval / endValue)
+    let counter = setInterval(() => {
+        startValue++
+        num.textContent = startValue
+        if (startValue == endValue) {
+            clearInterval(counter)
+        }
+    }, duration);
+})

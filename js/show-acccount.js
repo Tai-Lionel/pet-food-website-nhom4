@@ -16,9 +16,13 @@ function showAccount() {
         const signOut = document.querySelector(".sign-out")
         if (signOut) {
             document.querySelector(".sign-out").addEventListener("click", e => {
-                localStorage.removeItem("currentUser")
-                showAccount()
-                flash("success", `Signed out successfully`)
+                document.body.style.cursor = "wait"
+                setTimeout(() => {
+                    localStorage.removeItem("currentUser")
+                    showAccount()
+                    flash("success", `Signed out successfully`)
+                    document.body.style.cursor = "default"
+                }, 2000);
             })
         }
     } else {
@@ -112,10 +116,18 @@ function showAccount() {
                     const users = JSON.parse(localStorage.getItem("users")) || []
                     for (let user of users) {
                         if (user.email === email && user.password === password) {
-                            document.querySelector(".authentication-message").style.display = "none"
-                            localStorage.setItem("currentUser", JSON.stringify(user))
-                            showAccount()
-                            flash("success", `Welcome back ${user.firstName} ${user.lastName}`)
+                            document.body.style.cursor = "wait"
+                            e.target.style.cusor = "wait"
+                            e.target.querySelector("button").style.cursor = "wait"
+                            setTimeout(() => {
+                                document.querySelector(".authentication-message").style.display = "none"
+                                localStorage.setItem("currentUser", JSON.stringify(user))
+                                showAccount()
+                                flash("success", `Welcome back ${user.firstName} ${user.lastName}`)
+                                document.body.style.cursor = "default"
+                                e.target.style.cusor = "default"
+                                e.target.querySelector("button").style.cursor = "default"
+                            }, 3000);
                             return
                         }
                     }

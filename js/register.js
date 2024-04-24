@@ -54,11 +54,15 @@ registerForm.addEventListener("submit", e => {
         const password = registerForm.password.value;
         const newUser = { firstName, lastName, gender, dob, email, password }
         if (register(newUser)) {
+            document.body.style.cursor = "wait"
+            e.target.querySelector("button").style.cursor = "wait"
             setTimeout(() => {
                 localStorage.setItem("currentUser", JSON.stringify(newUser))
                 showAccount()
                 window.location.href = "home.html"
                 localStorage.setItem("flash", JSON.stringify({ "type": "success", "message": `Welcome to Gopet ${newUser.firstName} ${newUser.lastName}` }))
+                document.body.style.cursor = "default"
+                e.target.querySelector("button").style.cursor = "default"
             }, 3000);
         } else {
             flash("error", "This email has already been registered")
